@@ -1,6 +1,58 @@
 {
   "version": 2,
   "titre": "Ludothèque de la table",
+  "types": [
+    {
+      "id": "histoire",
+      "nom": "Histoire",
+      "couleur": "#C0453F",
+      "embleme": "histoire"
+    },
+    {
+      "id": "systeme",
+      "nom": "Système",
+      "couleur": "#4084AE",
+      "embleme": "systeme"
+    },
+    {
+      "id": "creature",
+      "nom": "Créature",
+      "couleur": "#4E8B5A",
+      "embleme": "creature"
+    },
+    {
+      "id": "objet",
+      "nom": "Objet",
+      "couleur": "#C58A2A",
+      "embleme": "objet"
+    },
+    {
+      "id": "lieu",
+      "nom": "Lieu",
+      "couleur": "#8060B4",
+      "embleme": "lieu"
+    },
+    {
+      "id": "personnage",
+      "nom": "Personnage",
+      "couleur": "#B5654A",
+      "embleme": "personnage"
+    },
+    {
+      "id": "savoir",
+      "nom": "Savoir",
+      "couleur": "#8A93A8",
+      "embleme": "savoir"
+    }
+  ],
+  "univers": [
+    {
+      "nom": "Les Cendres d'Arkhen",
+      "couleur": "#8A5A3C",
+      "fond": "",
+      "voile": 55
+    }
+  ],
   "cartes": [
     {
       "id": "c01",
