@@ -123,18 +123,22 @@ select.univers option{background:var(--nuit-2)}
   transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,opacity .22s;
   transform-style:preserve-3d;will-change:transform;
 }
-.carte::after{content:"";position:absolute;inset:4px;border-radius:9px;border:1px solid rgba(36,29,46,.16);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 26%,transparent) inset;pointer-events:none}
-.carte:hover,.carte:focus-visible{transform:translateY(-10px) rotateX(5deg) scale(1.02);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 26px 44px -18px rgba(0,0,0,.95),0 0 0 1px color-mix(in srgb,var(--c) 45%,transparent);z-index:3}
+.carte{--u:var(--c)}
+.carte::after{content:"";position:absolute;inset:4px;border-radius:9px;border:1px solid rgba(36,29,46,.16);box-shadow:0 0 0 1px color-mix(in srgb,var(--u) 32%,transparent) inset;pointer-events:none}
+.carte:hover,.carte:focus-visible{transform:translateY(-10px) rotateX(5deg) scale(1.02);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 26px 44px -18px rgba(0,0,0,.95),0 0 0 1px color-mix(in srgb,var(--u) 50%,transparent);z-index:3}
 .carte-tete{display:flex;align-items:flex-start;gap:6px;padding:2px 4px 6px;flex:none}
 .carte-titre{font-family:var(--display);font-weight:600;font-variation-settings:"SOFT" 30,"WONK" 1;font-size:clamp(13px,1.15vw,15.5px);line-height:1.12;margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pip{width:19px;height:19px;flex:none;fill:var(--c);filter:drop-shadow(0 1px 0 rgba(255,255,255,.7))}
 .vignette{position:relative;border-radius:7px;overflow:hidden;flex:1 1 auto;min-height:44px;background:repeating-linear-gradient(45deg,rgba(36,29,46,.05) 0 7px,rgba(36,29,46,.02) 7px 14px),color-mix(in srgb,var(--c) 16%,#DFD1B4);box-shadow:0 1px 3px rgba(36,29,46,.28) inset,0 0 0 1px rgba(36,29,46,.14);display:grid;place-items:center}
 .vignette img{width:100%;height:100%;object-fit:cover;display:block}
 .vignette .vide{width:34%;height:34%;fill:color-mix(in srgb,var(--c) 62%,#8A7C63);opacity:.5}
-.univers{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--c) 62%,var(--encre));margin:8px 4px 4px;display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden}
-.univers::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 40%,transparent),transparent)}
+.univers{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--u) 68%,var(--encre));margin:8px 4px 4px;display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden}
+.univers::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,color-mix(in srgb,var(--u) 55%,transparent),transparent)}
 .resume{font-size:12.2px;line-height:1.32;color:rgba(36,29,46,.82);margin:0 4px;flex:none;height:2.64em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pied{display:flex;gap:4px;padding:6px 4px 2px;overflow:hidden;height:26px;align-items:center;flex:none}
+.carte.habillee .resume,.carte.habillee .carte-titre{text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.carte.habillee .vignette{box-shadow:0 1px 3px rgba(36,29,46,.35) inset,0 0 0 1px rgba(36,29,46,.22)}
+.carte.habillee .mini-etq{background:rgba(255,255,255,.5)}
 .mini-etq{font-family:var(--mono);font-size:9px;letter-spacing:.04em;padding:3px 6px;border-radius:4px;background:rgba(36,29,46,.08);color:rgba(36,29,46,.62);white-space:nowrap}
 
 /* marques de deck */
@@ -162,7 +166,8 @@ select.univers option{background:var(--nuit-2)}
 /* ---------- Voile / livre ---------- */
 .voile{position:fixed;inset:0;z-index:40;display:none;background:rgba(10,7,20,.72);backdrop-filter:blur(7px);padding:clamp(10px,3vw,34px);overflow:auto}
 .voile.ouvert{display:grid;place-items:start center}
-.livre{--c:var(--or);width:min(1000px,100%);margin:auto;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 18%),radial-gradient(90% 60% at 50% 0%,#FBF4E5,var(--parchemin) 60%,var(--parchemin-2));color:var(--encre);box-shadow:0 40px 90px -30px #000,0 0 0 1px rgba(212,165,55,.35);animation:ouvrir .3s cubic-bezier(.2,.8,.3,1)}
+.livre{--c:var(--or);--u:var(--c);width:min(1000px,100%);margin:auto;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 18%),radial-gradient(90% 60% at 50% 0%,#FBF4E5,var(--parchemin) 60%,var(--parchemin-2));color:var(--encre);box-shadow:0 40px 90px -30px #000,0 0 0 1px rgba(212,165,55,.35);animation:ouvrir .3s cubic-bezier(.2,.8,.3,1)}
+.livre::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--u),color-mix(in srgb,var(--u) 35%,transparent));z-index:2}
 .livre.etroit{width:min(560px,100%)}
 @keyframes ouvrir{from{opacity:0;transform:translateY(14px) rotateX(9deg) scale(.97)}to{opacity:1;transform:none}}
 .livre-corps{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr)}
@@ -238,6 +243,31 @@ select.univers option{background:var(--nuit-2)}
 .btn-fantome{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;padding:11px 18px;border-radius:9px;border:1px solid rgba(36,29,46,.22);color:rgba(36,29,46,.7)}
 .btn-fantome:hover{background:rgba(36,29,46,.07)}
 
+/* ---------- Réglages types & univers ---------- */
+.onglets{display:flex;gap:4px;margin:-4px 0 4px;flex-wrap:wrap}
+.onglets button{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:8px 14px;border-radius:9px;color:rgba(36,29,46,.55);transition:.16s}
+.onglets button:hover{background:rgba(36,29,46,.06)}
+.onglets button[aria-pressed="true"]{background:var(--encre);color:var(--parchemin)}
+.rangee{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid rgba(36,29,46,.12)}
+.rangee:last-of-type{border-bottom:none}
+.rangee .nom{font-family:var(--display);font-weight:600;font-size:17px;flex:1;min-width:120px;display:flex;align-items:center;gap:10px}
+.rangee .nom svg{width:20px;height:20px;flex:none}
+.pastille-couleur{width:22px;height:22px;border-radius:6px;flex:none;box-shadow:0 0 0 1px rgba(36,29,46,.2) inset}
+.apercu-fond{width:34px;height:46px;border-radius:5px;flex:none;background-size:cover;background-position:center;box-shadow:0 0 0 1px rgba(36,29,46,.2)}
+.nuancier{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nuancier button{width:26px;height:26px;border-radius:7px;box-shadow:0 0 0 1px rgba(36,29,46,.18) inset;transition:transform .14s}
+.nuancier button:hover{transform:scale(1.12)}
+.nuancier button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--encre)}
+.nuancier input[type=color]{width:36px;height:26px;padding:0;border:1px solid rgba(36,29,46,.2);border-radius:7px;background:none}
+.grille-emblemes{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:6px}
+.grille-emblemes button{aspect-ratio:1;border-radius:9px;border:1px solid rgba(36,29,46,.14);display:grid;place-items:center;transition:.14s}
+.grille-emblemes button svg{width:22px;height:22px;fill:var(--c)}
+.grille-emblemes button:hover{background:rgba(36,29,46,.06)}
+.grille-emblemes button[aria-pressed="true"]{background:color-mix(in srgb,var(--c) 18%,transparent);border-color:var(--c)}
+.curseur{width:100%;accent-color:var(--encre)}
+.apercu-carte{display:flex;justify-content:center;padding:6px 0 2px}
+.apercu-carte .carte{width:150px;pointer-events:none}
+
 /* ---------- Comptes ---------- */
 .compte-ligne{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid rgba(36,29,46,.12)}
 .compte-ligne:last-of-type{border-bottom:none}
@@ -298,6 +328,21 @@ select.univers option{background:var(--nuit-2)}
   <symbol id="g-lieu" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l9 6.6V22h-6.6v-5.4a2.4 2.4 0 0 0-4.8 0V22H3V8.6zm0 4.4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></symbol>
   <symbol id="g-personnage" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2c5 0 8 2.2 8 6 0 6.2-4 14-8 14s-8-7.8-8-14c0-3.8 3-6 8-6zM8.9 9.2a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zm6.2 0a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM9 16.4c2 1 4 1 6 0-.9 1.9-5.1 1.9-6 0z"/></symbol>
   <symbol id="g-savoir" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 4.6c5.2 0 9.4 4.2 11 7.4-1.6 3.2-5.8 7.4-11 7.4S2.6 15.2 1 12c1.6-3.2 5.8-7.4 11-7.4zm0 3.6a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6z"/></symbol>
+
+  <symbol id="g-epee" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 .8l2.7 4.2V14.6H9.3V5zM5.4 15.8h13.2v2.3H5.4zM10.7 19.3h2.6v2.1h-2.6zM12 20.6a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4z"/></symbol>
+  <symbol id="g-potion" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.6 1.6h6.8v2.2h-1.2v4.4l4.5 8.5A4 4 0 0 1 15.2 22.6H8.8a4 4 0 0 1-3.5-5.9l4.5-8.5V3.8H8.6zM11 9.2l-2.6 5c1.9.9 4.3.9 7.2 0l-2.6-5z"/></symbol>
+  <symbol id="g-couronne" viewBox="0 0 24 24"><path d="M2.4 6.6l4.4 4.2L12 2.4l5.2 8.4 4.4-4.2-2 13.4H4.4zM6 18.6h12v2.4H6z"/></symbol>
+  <symbol id="g-etoile" viewBox="0 0 24 24"><path d="M12 1.6l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.4l-6.3 3.6 1.5-7.1L1.8 9l7.2-.8z"/></symbol>
+  <symbol id="g-engrenage" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.2 1.4h3.6l.4 2.7 2.3 1 2.2-1.6 2.5 2.5-1.6 2.2 1 2.3 2.7.4v3.6l-2.7.4-1 2.3 1.6 2.2-2.5 2.5-2.2-1.6-2.3 1-.4 2.7h-3.6l-.4-2.7-2.3-1-2.2 1.6-2.5-2.5 1.6-2.2-1-2.3-2.7-.4v-3.6l2.7-.4 1-2.3L1.8 6l2.5-2.5 2.2 1.6 2.3-1zM12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6z"/></symbol>
+  <symbol id="g-crane" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 1.6c5.2 0 8.4 3.3 8.4 7.8 0 2.7-1.3 4.3-2.6 5.3v2.4a2 2 0 0 1-2 2h-.4v3.3h-2.6v-3.3h-1.6v3.3H8.6v-3.3h-.4a2 2 0 0 1-2-2v-2.4C4.9 13.7 3.6 12.1 3.6 9.4c0-4.5 3.2-7.8 8.4-7.8zM8.8 7.6a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6zm6.4 0a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/></symbol>
+  <symbol id="g-feuille" viewBox="0 0 24 24"><path d="M21.6 2c-11.4 0-17 4.6-17 11.4 0 2 .6 3.8 1.6 5.2l-2.4 2.6 1.7 1.6 2.4-2.6c1.4.9 3 1.4 4.8 1.4 6 0 8.9-5.6 8.9-19.6zM12.4 19.4c-1.1 0-2.1-.3-3-.8 2.5-5.4 6.4-8.6 10.2-10.2-1 7.5-3.3 11-7.2 11z"/></symbol>
+  <symbol id="g-flamme" viewBox="0 0 24 24"><path d="M12.6 1.4c.6 4.4 5.4 6.2 5.4 11.2a6 6 0 0 1-12 0c0-2.8 1.6-4.2 2.8-6.4.5 1.9 1.4 2.6 2.1 2.6 1.2 0 1.9-1.3 1.5-3.6-.2-1.4-.5-2.6.2-3.8z"/></symbol>
+  <symbol id="g-lune" viewBox="0 0 24 24"><path d="M15.4 1.6a10.4 10.4 0 1 0 6.8 17.6A9.4 9.4 0 0 1 15.4 1.6z"/></symbol>
+  <symbol id="g-de" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3.4 3.4h17.2v17.2H3.4zM7.6 6.6a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zm8.8 0a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zM12 10.3a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zM7.6 14a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zm8.8 0a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4z"/></symbol>
+  <symbol id="g-livre" viewBox="0 0 24 24"><path d="M2 3.4c3.2-1.1 6.6-1 9 1.2v16.4c-2.4-2.2-5.8-2.3-9-1.2zm20 0c-3.2-1.1-6.6-1-9 1.2v16.4c2.4-2.2 5.8-2.3 9-1.2z"/></symbol>
+  <symbol id="g-eclair" viewBox="0 0 24 24"><path d="M13.8 1.4L4 13.6h6.2L9.4 22.6 20 9.8h-6.6z"/></symbol>
+  <symbol id="g-coeur" viewBox="0 0 24 24"><path d="M12 21.6C12 21.6 2.4 14.8 2.4 8.8A5.2 5.2 0 0 1 12 5.9a5.2 5.2 0 0 1 9.6 2.9c0 6-9.6 12.8-9.6 12.8z"/></symbol>
+  <symbol id="g-ancre" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 1.4a3.2 3.2 0 0 1 1.2 6.2v2h3.2v2.2h-3.2v8.4a7 7 0 0 0 5.5-5.2h-1.9l2.9-4 2.9 4h-1.7A9.2 9.2 0 0 1 12 22.6a9.2 9.2 0 0 1-8.9-7.6H1.4l2.9-4 2.9 4H5.3a7 7 0 0 0 5.5 5.2v-8.4H7.6V9.6h3.2v-2A3.2 3.2 0 0 1 12 1.4zm0 2.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></symbol>
   <symbol id="g-plus" viewBox="0 0 24 24"><path d="M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z"/></symbol>
   <symbol id="g-loupe" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.5 2a8.5 8.5 0 1 0 5.2 15.2l4.6 4.6 1.7-1.7-4.6-4.6A8.5 8.5 0 0 0 10.5 2zm0 2.4a6.1 6.1 0 1 1 0 12.2 6.1 6.1 0 0 1 0-12.2z"/></symbol>
   <symbol id="g-gauche" viewBox="0 0 24 24"><path d="M15.4 3.6L7 12l8.4 8.4 1.7-1.7L10.4 12l6.7-6.7z"/></symbol>
@@ -381,20 +426,101 @@ const SOURCE = {
 /* ▲▲▲  fin des réglages  ▲▲▲ */
 
 const parametres = new URLSearchParams(location.search);
-if(parametres.get("source")) SOURCE.chemin = parametres.get("source");
+/* ---- Résolution de la source ----
+   priorité : ?source=… dans l'URL  >  lien mémorisé par l'utilisateur  >  SOURCE.chemin */
+const CLE_SOURCE = "ludotheque:source";
+const CLE_PUB    = "ludotheque:publication";
+let chemin = SOURCE.chemin;
+try{ const memo = localStorage.getItem(CLE_SOURCE); if(memo) chemin = memo; }catch(e){}
+if(parametres.get("source")) chemin = parametres.get("source");
 
-/* ==================== Types ==================== */
-const TYPES = {
-  histoire:{label:"Histoire",couleur:"var(--t-histoire)"},
-  systeme:{label:"Système",couleur:"var(--t-systeme)"},
-  creature:{label:"Créature",couleur:"var(--t-creature)"},
-  objet:{label:"Objet",couleur:"var(--t-objet)"},
-  lieu:{label:"Lieu",couleur:"var(--t-lieu)"},
-  personnage:{label:"Personnage",couleur:"var(--t-personnage)"},
-  savoir:{label:"Savoir",couleur:"var(--t-savoir)"}
-};
-const ORDRE_TYPES = Object.keys(TYPES);
-const typeInfo = t => TYPES[t] || TYPES.savoir;
+function definirSource(nouveau){
+  chemin = (nouveau||"").trim() || SOURCE.chemin;
+  try{ nouveau ? localStorage.setItem(CLE_SOURCE, chemin) : localStorage.removeItem(CLE_SOURCE); }catch(e){}
+}
+
+/* ---- Publication (dépôt distant, côté MJ uniquement) ----
+   Ces réglages, jeton compris, restent dans le navigateur du MJ.
+   Ils ne sont jamais écrits dans le fichier partagé ni dans le HTML. */
+let pub = {actif:false, depot:"", branche:"main", fichier:"ludotheque.json", jeton:"", decksAuto:true};
+try{ const p = localStorage.getItem(CLE_PUB); if(p) pub = Object.assign(pub, JSON.parse(p)); }catch(e){}
+/* ---- Mode « Google Apps Script » ----
+   Quand la source est un script web (…/macros/s/…/exec), c'est le script
+   qui vérifie le compte et ne renvoie que les cartes auxquelles il a droit.
+   Le nom et le code sont alors de vrais identifiants, pas une politesse. */
+const CLE_IDENTS = "ludotheque:identifiants";
+const attenteConnexion = () => modeScript() && !idents;
+const modeScript = () => /script\.google\.com\/macros\//.test(chemin) || /\/macros\/s\//.test(chemin);
+let idents = null;
+try{ const i = localStorage.getItem(CLE_IDENTS); if(i) idents = JSON.parse(i); }catch(e){}
+function definirIdents(v){
+  idents = v;
+  try{ v ? localStorage.setItem(CLE_IDENTS, JSON.stringify(v)) : localStorage.removeItem(CLE_IDENTS); }catch(e){}
+}
+async function appelScript(charge){
+  // Content-Type text/plain : évite la requête préliminaire CORS, qu'Apps Script ne sait pas traiter.
+  const r = await fetch(chemin, {method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"},
+                                 body: JSON.stringify(charge), redirect:"follow"});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  let d;
+  try{ d = JSON.parse(await r.text()); }
+  catch(e){ throw new Error("Réponse illisible — vérifiez que le script est déployé pour « Tout le monde »."); }
+  if(d.erreur) throw new Error(d.erreur);
+  return d;
+}
+
+function enregistrerPub(){ try{ localStorage.setItem(CLE_PUB, JSON.stringify(pub)); }catch(e){} }
+function urlBrute(f){ return "https://raw.githubusercontent.com/"+pub.depot+"/"+pub.branche+"/"+(f||pub.fichier); }
+
+/* ==================== Types de cartes ====================
+   Les sept types de départ ne sont qu'une amorce : le MJ peut en créer,
+   en renommer, en recolorer. Ils vivent dans le fichier, pas dans le code. */
+const EMBLEMES = ["histoire","systeme","creature","objet","lieu","personnage","savoir",
+  "epee","potion","couronne","etoile","engrenage","crane","feuille","flamme","lune",
+  "de","livre","eclair","coeur","ancre"];
+
+const TYPES_INITIAUX = [
+  {id:"histoire",   nom:"Histoire",   couleur:"#C0453F", embleme:"histoire"},
+  {id:"systeme",    nom:"Système",    couleur:"#4084AE", embleme:"systeme"},
+  {id:"creature",   nom:"Créature",   couleur:"#4E8B5A", embleme:"creature"},
+  {id:"objet",      nom:"Objet",      couleur:"#C58A2A", embleme:"objet"},
+  {id:"lieu",       nom:"Lieu",       couleur:"#8060B4", embleme:"lieu"},
+  {id:"personnage", nom:"Personnage", couleur:"#B5654A", embleme:"personnage"},
+  {id:"savoir",     nom:"Savoir",     couleur:"#8A93A8", embleme:"savoir"}
+];
+
+const PALETTE = ["#C0453F","#B5654A","#C58A2A","#8A8A2E","#4E8B5A","#3E8C86","#4084AE",
+                 "#5A63B0","#8060B4","#A8508E","#8A93A8","#6B5B4A"];
+
+function typeInfo(id){
+  const t = base.types && base.types.find(x=>x.id===id);
+  return t || {id:id||"?", nom:"Type retiré", couleur:"#8A93A8", embleme:"savoir"};
+}
+const ordreTypes = () => (base.types||[]).map(t=>t.id);
+
+/* ==================== Univers ====================
+   Chaque univers peut porter sa couleur et un fond de carte. */
+function univInfo(nom){
+  const u = base.univers && base.univers.find(x=>x.nom===nom);
+  return u || {nom:nom||"", couleur:"", fond:"", voile:55};
+}
+function universConnus(){
+  const noms = new Set((base.univers||[]).map(u=>u.nom).filter(Boolean));
+  visibles().forEach(c=>{ if(c.univers) noms.add(c.univers); });
+  return [...noms].sort((a,b)=>a.localeCompare(b,"fr"));
+}
+/** Habillage d'une carte : le type donne l'emblème, l'univers donne la livrée. */
+function livree(c){
+  const t = typeInfo(c.type), u = univInfo(c.univers);
+  let style = "--c:"+t.couleur+";--u:"+(u.couleur || t.couleur);
+  if(u.fond){
+    const v = (u.voile === undefined ? 55 : u.voile)/100;
+    style += ";background-image:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 30%),"+
+           "linear-gradient(rgba(247,240,227,"+v+"),rgba(230,219,197,"+Math.min(1,v+.08)+")),"+
+           "url('"+String(u.fond).replace(/'/g,"%27")+"');background-size:auto,cover,cover;background-position:center";
+  }
+  return style;
+}
 
 /* ==================== Outils ==================== */
 const $ = s => document.querySelector(s);
@@ -409,6 +535,8 @@ function dire(txt,erreur){
   minuteurMsg = setTimeout(()=>m.classList.remove("vu"), erreur?7500:3200);
 }
 const glyphe = (t,c) => '<svg class="'+(c||"")+'" aria-hidden="true"><use href="#g-'+t+'"></use></svg>';
+/* emblème d'un type de carte */
+const glypheType = (id,c) => glyphe(typeInfo(id).embleme, c);
 
 /* ==================== Modèle ==================== */
 function normaliserCarte(c){
@@ -416,7 +544,7 @@ function normaliserCarte(c){
     id: c.id || nouvelId("c"),
     titre: (c.titre||"Sans titre").trim(),
     univers: (c.univers||"").trim(),
-    type: TYPES[c.type] ? c.type : "savoir",
+    type: c.type || "savoir",
     resume: (c.resume||"").trim(),
     texte: c.texte||"",
     tags: Array.isArray(c.tags) ? c.tags.map(t=>String(t).trim()).filter(Boolean) : [],
@@ -433,12 +561,31 @@ function normaliserCompte(u){
     deck: Array.isArray(u.deck) ? u.deck.slice() : []
   };
 }
+function normaliserType(t){
+  return {
+    id: t.id || nouvelId("t"),
+    nom: (t.nom || t.label || "Type").trim(),
+    couleur: t.couleur && t.couleur.charAt(0)==="#" ? t.couleur : "#8A93A8",
+    embleme: EMBLEMES.indexOf(t.embleme) >= 0 ? t.embleme : "savoir"
+  };
+}
+function normaliserUnivers(u){
+  return {
+    nom: (u.nom||"").trim(),
+    couleur: u.couleur && u.couleur.charAt(0)==="#" ? u.couleur : "",
+    fond: u.fond || "",
+    voile: typeof u.voile === "number" ? Math.max(0,Math.min(100,u.voile)) : 55
+  };
+}
 function normaliserBase(d){
   if(Array.isArray(d)) d = {cartes:d};            // ancien format : simple liste de cartes
   d = d || {};
+  const types = (d.types && d.types.length ? d.types : TYPES_INITIAUX).map(normaliserType);
   return {
     version: 2,
     titre: d.titre || "Ludothèque",
+    types: types,
+    univers: (d.univers||[]).map(normaliserUnivers).filter(u=>u.nom),
     cartes: (d.cartes||[]).map(normaliserCarte),
     comptes: (d.comptes||[]).map(normaliserCompte)
   };
@@ -469,7 +616,7 @@ function lireCache(){
   try{ const b = localStorage.getItem(CLE_CACHE); return b ? JSON.parse(b) : null; }catch(e){ return null; }
 }
 function ecrireCache(sale){
-  try{ localStorage.setItem(CLE_CACHE, JSON.stringify({chemin:SOURCE.chemin, sale:!!sale, base:base, le:Date.now()})); }
+  try{ localStorage.setItem(CLE_CACHE, JSON.stringify({chemin:chemin, sale:!!sale, base:base, le:Date.now()})); }
   catch(e){ dire("Le cache local est plein : exportez une copie du fichier sans tarder.", true); }
 }
 
@@ -485,7 +632,7 @@ function coffre(action, valeur){
       try{
         const tx = d.result.transaction("poignees", action==="lire" ? "readonly" : "readwrite");
         const st = tx.objectStore("poignees");
-        const rq = action==="lire" ? st.get(SOURCE.chemin) : st.put(valeur, SOURCE.chemin);
+        const rq = action==="lire" ? st.get(chemin) : st.put(valeur, chemin);
         rq.onsuccess = ()=> res(rq.result || null);
         rq.onerror = ()=> res(null);
       }catch(e){ res(null); }
@@ -494,40 +641,118 @@ function coffre(action, valeur){
 }
 
 async function chargerDistant(){
+  if(modeScript()){
+    if(!idents) throw new Error("connexion requise");
+    const d = await appelScript({action:"ouvrir", nom:idents.nom, code:idents.code});
+    const b = normaliserBase({titre:d.titre, cartes:d.cartes, comptes:d.comptes});
+    b.moi = d.compte && d.compte.id;
+    return b;
+  }
   if(poignee){
     const f = await poignee.getFile();
     return normaliserBase(JSON.parse(await f.text()));
   }
-  const sep = SOURCE.chemin.indexOf("?") >= 0 ? "&" : "?";
-  const r = await fetch(SOURCE.chemin + sep + "t=" + Date.now(), {cache:"no-store"});
+  const sep = chemin.indexOf("?") >= 0 ? "&" : "?";
+  const r = await fetch(chemin + sep + "t=" + Date.now(), {cache:"no-store"});
   if(!r.ok) throw new Error("HTTP " + r.status);
   return normaliserBase(await r.json());
 }
 
+/* --- Écriture sur un dépôt GitHub (aucun serveur à installer) --- */
+function enBase64(txt){
+  const o = new TextEncoder().encode(txt);
+  let b = "";
+  for(let i=0;i<o.length;i++) b += String.fromCharCode(o[i]);
+  return btoa(b);
+}
+function enteteGH(){
+  return {"Authorization":"Bearer "+pub.jeton, "Accept":"application/vnd.github+json", "X-GitHub-Api-Version":"2022-11-28"};
+}
+async function deposerGH(fichier, contenu, note){
+  const url = "https://api.github.com/repos/"+pub.depot+"/contents/"+fichier.split("/").map(encodeURIComponent).join("/");
+  let sha = null;
+  const r0 = await fetch(url+"?ref="+encodeURIComponent(pub.branche), {headers:enteteGH(), cache:"no-store"});
+  if(r0.ok) sha = (await r0.json()).sha;
+  else if(r0.status !== 404){
+    const e = await r0.json().catch(()=>({}));
+    throw new Error(e.message || ("HTTP "+r0.status));
+  }
+  const corps = {message: note || "Ludothèque — mise à jour", content: enBase64(contenu), branch: pub.branche};
+  if(sha) corps.sha = sha;
+  const r = await fetch(url, {method:"PUT", headers:Object.assign({"Content-Type":"application/json"}, enteteGH()), body:JSON.stringify(corps)});
+  if(!r.ok){
+    const e = await r.json().catch(()=>({}));
+    throw new Error(e.message || ("HTTP "+r.status));
+  }
+  return true;
+}
+const pubPrete = () => pub.actif && pub.depot && pub.jeton && pub.fichier;
+
+/* Decks individuels : un fichier par joueur, publié seulement s'il a changé. */
+function empreinte(s){ let h=5381; for(let i=0;i<s.length;i++) h=((h<<5)+h+s.charCodeAt(i))|0; return String(h); }
+function slug(s){ return sansAccent(s).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "joueur"; }
+function cheminDeck(j){
+  const dossier = pub.fichier.indexOf("/")>=0 ? pub.fichier.slice(0,pub.fichier.lastIndexOf("/")+1) : "";
+  return dossier + "deck-" + slug(j.nom) + ".json";
+}
+function paquetDeck(j){
+  return {version:2, titre: base.titre+" — deck de "+j.nom,
+    cartes: base.cartes.filter(c=>j.deck.indexOf(c.id)>=0),
+    comptes:[{id:j.id, nom:j.nom, role:"joueur", code:j.code, deck:j.deck.slice()}]};
+}
+async function publierDecks(force){
+  if(!pubPrete()) return 0;
+  let empreintes = {};
+  try{ empreintes = JSON.parse(localStorage.getItem("ludotheque:decks")||"{}"); }catch(e){}
+  let n = 0;
+  for(const j of base.comptes.filter(u=>u.role==="joueur")){
+    const txt = JSON.stringify(paquetDeck(j), null, 2);
+    const e = empreinte(txt);
+    if(!force && empreintes[j.id] === e) continue;
+    await deposerGH(cheminDeck(j), txt, "Deck de "+j.nom);
+    empreintes[j.id] = e; n++;
+  }
+  try{ localStorage.setItem("ludotheque:decks", JSON.stringify(empreintes)); }catch(e){}
+  return n;
+}
+
 async function ecrireDistant(){
+  if(modeScript()){
+    if(!idents || !estMJ()) return false;
+    await appelScript({action:"enregistrer", nom:idents.nom, code:idents.code, base:base});
+    return true;
+  }
   if(poignee){
     const p = await poignee.queryPermission({mode:"readwrite"});
-    if(p !== "granted") return false;
-    const w = await poignee.createWritable();
-    await w.write(JSON.stringify(base,null,2));
-    await w.close();
+    if(p === "granted"){
+      const w = await poignee.createWritable();
+      await w.write(JSON.stringify(base,null,2));
+      await w.close();
+      return true;
+    }
+  }
+  if(pubPrete()){
+    await deposerGH(pub.fichier, JSON.stringify(base,null,2), "Ludothèque — "+base.cartes.length+" cartes");
+    if(pub.decksAuto){ try{ await publierDecks(false); }catch(e){} }
     return true;
   }
   if(SOURCE.ecritureParPUT){
-    const r = await fetch(SOURCE.chemin, {method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify(base,null,2)});
+    const r = await fetch(chemin, {method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify(base,null,2)});
     return r.ok;
   }
   return false;
 }
 
 /** Appelé après chaque modification du MJ. */
+let derniereErreur = "";
 async function sauvegarder(){
   ecrireCache(true);
-  majStatut("sale","modifications non enregistrées");
+  majStatut("sale","enregistrement…");
+  derniereErreur = "";
   try{
-    if(await ecrireDistant()){ ecrireCache(false); majStatut("ok","fichier à jour"); return true; }
-  }catch(e){}
-  majStatut("sale","modifications non enregistrées");
+    if(await ecrireDistant()){ ecrireCache(false); majStatut("ok", modeScript() ? "enregistré sur la table" : (pubPrete() && !poignee ? "publié en ligne" : "fichier à jour")); return true; }
+  }catch(e){ derniereErreur = (e && e.message) || String(e); }
+  majStatut("sale", derniereErreur ? "publication refusée" : "modifications non enregistrées");
   return false;
 }
 
@@ -605,7 +830,7 @@ function filtrees(){
     if(etat.types.size && !etat.types.has(c.type)) return false;
     for(const t of etat.tags) if(!c.tags.some(x=>sansAccent(x)===sansAccent(t))) return false;
     if(q.length){
-      const foin = sansAccent([c.titre,c.univers,c.resume,c.texte,c.tags.join(" "),typeInfo(c.type).label].join(" "));
+      const foin = sansAccent([c.titre,c.univers,c.resume,c.texte,c.tags.join(" "),typeInfo(c.type).nom].join(" "));
       if(!q.every(mot=>foin.includes(mot))) return false;
     }
     return true;
@@ -633,8 +858,8 @@ function rendreFiltres(){
 
   const comptes = {};
   LES.forEach(c=>comptes[c.type]=(comptes[c.type]||0)+1);
-  $("#filtre-types").innerHTML = ORDRE_TYPES.filter(t=>comptes[t]).map(t=>
-    '<button class="pip-filtre" data-type="'+t+'" style="--c:'+typeInfo(t).couleur+'" aria-pressed="'+(etat.types.has(t)?"true":"false")+'"><span class="glyphe">'+glyphe(t)+"</span>"+typeInfo(t).label+"</button>").join("");
+  $("#filtre-types").innerHTML = ordreTypes().filter(t=>comptes[t]).map(t=>
+    '<button class="pip-filtre" data-type="'+t+'" style="--c:'+typeInfo(t).couleur+'" aria-pressed="'+(etat.types.has(t)?"true":"false")+'"><span class="glyphe">'+glypheType(t)+"</span>"+typeInfo(t).nom+"</button>").join("");
 
   const compteTags = new Map();
   LES.forEach(c=>c.tags.forEach(t=>compteTags.set(t,(compteTags.get(t)||0)+1)));
@@ -653,12 +878,12 @@ function rendreFiltres(){
 function carteHTML(c){
   const info = typeInfo(c.type);
   const dansDeck = etat.deckDe ? (base.comptes.find(u=>u.id===etat.deckDe)||{deck:[]}).deck.indexOf(c.id)>=0 : false;
-  const illus = c.illustration ? '<img src="'+html(c.illustration)+'" alt="" loading="lazy">' : '<svg class="vide" aria-hidden="true"><use href="#g-'+c.type+'"></use></svg>';
-  return '<button class="carte'+(dansDeck?" choisie":"")+'" data-id="'+c.id+'" style="--c:'+info.couleur+'" aria-label="'+html(c.titre)+" — "+info.label+(c.univers?", "+html(c.univers):"")+'"'+(etat.deckDe?' aria-pressed="'+dansDeck+'"':"")+">"+
+  const illus = c.illustration ? '<img src="'+html(c.illustration)+'" alt="" loading="lazy">' : '<svg class="vide" aria-hidden="true"><use href="#g-'+typeInfo(c.type).embleme+'"></use></svg>';
+  return '<button class="carte'+(dansDeck?" choisie":"")+(univInfo(c.univers).fond?" habillee":"")+'" data-id="'+c.id+'" style="'+livree(c)+'" aria-label="'+html(c.titre)+" — "+info.nom+(c.univers?", "+html(c.univers):"")+'"'+(etat.deckDe?' aria-pressed="'+dansDeck+'"':"")+">"+
     (dansDeck?'<span class="marque-deck">'+glyphe("coche")+"</span>":"")+
-    '<div class="carte-tete"><h3 class="carte-titre">'+html(c.titre)+"</h3>"+glyphe(c.type,"pip")+"</div>"+
+    '<div class="carte-tete"><h3 class="carte-titre">'+html(c.titre)+"</h3>"+glypheType(c.type,"pip")+"</div>"+
     '<div class="vignette">'+illus+"</div>"+
-    '<div class="univers">'+html(c.univers||info.label)+"</div>"+
+    '<div class="univers">'+html(c.univers||info.nom)+"</div>"+
     '<p class="resume">'+html(c.resume)+"</p>"+
     '<div class="pied">'+c.tags.slice(0,3).map(t=>'<span class="mini-etq">'+html(t)+"</span>").join("")+"</div></button>";
 }
@@ -741,17 +966,17 @@ function ouvrirLivre(id){
   etat.ouverte = id;
   const info = typeInfo(c.type), mj = estMJ();
   const voisines = filtrees(), idx = voisines.findIndex(x=>x.id===id);
-  const illus = c.illustration ? '<img src="'+html(c.illustration)+'" alt="Illustration de '+html(c.titre)+'">' : '<svg class="vide" aria-hidden="true"><use href="#g-'+c.type+'"></use></svg>';
+  const illus = c.illustration ? '<img src="'+html(c.illustration)+'" alt="Illustration de '+html(c.titre)+'">' : '<svg class="vide" aria-hidden="true"><use href="#g-'+typeInfo(c.type).embleme+'"></use></svg>';
   const retours = visibles().filter(x=> x.id!==c.id && new RegExp("\\[\\[\\s*"+c.titre.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\s*(\\||\\])","i").test(x.texte));
   const joueurs = base.comptes.filter(u=>u.role==="joueur");
 
   $("#voile").innerHTML =
-  '<article class="livre" style="--c:'+info.couleur+'"><div class="livre-corps">'+
+  '<article class="livre" style="--c:'+info.couleur+";--u:"+(univInfo(c.univers).couleur||info.couleur)+'"><div class="livre-corps">'+
     '<div class="page-gauche">'+
       '<div class="illus-grande">'+illus+"</div>"+
       '<div class="meta">'+
         (c.univers?'<div class="meta-bloc"><span class="meta-cle">Univers</span><span class="meta-val">'+html(c.univers)+"</span></div>":"")+
-        '<div class="meta-bloc"><span class="meta-cle">Type de carte</span><span class="type-ligne">'+glyphe(c.type)+html(info.label)+"</span></div>"+
+        '<div class="meta-bloc"><span class="meta-cle">Type de carte</span><span class="type-ligne">'+glypheType(c.type)+html(info.nom)+"</span></div>"+
         (c.tags.length?'<div class="meta-bloc"><span class="meta-cle">Étiquettes</span><div class="tags-livre">'+c.tags.map(t=>'<button class="tag-livre" data-filtrer-tag="'+html(t)+'">'+html(t)+"</button>").join("")+"</div></div>":"")+
         (mj && joueurs.length ? '<div class="meta-bloc"><span class="meta-cle">Dans le deck de</span><div class="tags-livre">'+
           joueurs.map(j=>'<button class="mini-btn'+(j.deck.indexOf(c.id)>=0?" actif":"")+'" data-donner="'+j.id+'" data-carte="'+c.id+'">'+html(j.nom)+"</button>").join("")+
@@ -765,7 +990,7 @@ function ouvrirLivre(id){
     "</div>"+
     '<div class="page-droite">'+
       '<div class="livre-tete"><div>'+
-        '<div class="livre-surtitre">'+html(info.label)+(c.univers?" · "+html(c.univers):"")+"</div>"+
+        '<div class="livre-surtitre">'+html(info.nom)+(c.univers?" · "+html(c.univers):"")+"</div>"+
         '<h2 class="livre-titre">'+html(c.titre)+"</h2></div>"+
         '<div class="nav-livre">'+
           '<button class="rond" data-aller="'+(voisines[idx-1]?voisines[idx-1].id:"")+'" '+(voisines[idx-1]?"":"disabled style=opacity:.3")+' aria-label="Carte précédente">'+glyphe("gauche")+"</button>"+
@@ -805,7 +1030,7 @@ function dessinerAtelier(modif){
     '<div class="duo">'+
       '<div class="champ"><label for="ch-univers">Univers</label><input id="ch-univers" list="liste-univers" value="'+html(brouillon.univers)+'" placeholder="Les Cendres d\'Arkhen"><datalist id="liste-univers">'+universs.map(u=>'<option value="'+html(u)+'">').join("")+"</datalist></div>"+
       '<div class="champ"><label>Illustration</label><div class="apercu-illus"><div class="boite">'+
-        (brouillon.illustration?'<img src="'+html(brouillon.illustration)+'" alt="">':glyphe(brouillon.type))+
+        (brouillon.illustration?'<img src="'+html(brouillon.illustration)+'" alt="">':glypheType(brouillon.type))+
       '</div><div style="display:grid;gap:6px;flex:1;min-width:0">'+
         '<button class="mini-btn" id="ch-fichier-btn">Choisir une image</button>'+
         '<input type="file" id="ch-fichier" accept="image/*" hidden>'+
@@ -813,7 +1038,8 @@ function dessinerAtelier(modif){
       "</div></div></div>"+
     "</div>"+
     '<div class="champ"><label>Type de carte</label><div class="choix-type" id="ch-type">'+
-      ORDRE_TYPES.map(t=>'<button data-type="'+t+'" style="--c:'+typeInfo(t).couleur+'" aria-pressed="'+(brouillon.type===t?"true":"false")+'">'+glyphe(t)+typeInfo(t).label+"</button>").join("")+
+      ordreTypes().map(t=>'<button data-type="'+t+'" style="--c:'+typeInfo(t).couleur+'" aria-pressed="'+(brouillon.type===t?"true":"false")+'">'+glypheType(t)+typeInfo(t).nom+"</button>").join("")+
+      (estMJ()?'<button id="ch-type-nouveau" style="--c:var(--encre)">'+glyphe("plus")+"Nouveau type</button>":"")+
     "</div></div>"+
     '<div class="champ"><label for="ch-resume">Courte description — visible sur la carte</label><textarea id="ch-resume" maxlength="180" style="min-height:60px" placeholder="Une phrase qui donne envie de retourner la carte.">'+html(brouillon.resume)+"</textarea></div>"+
     '<div class="champ"><label for="ch-tags">Étiquettes</label><div class="saisie-tags" id="zone-tags"></div><span class="aide">Entrée ou virgule pour valider une étiquette.</span></div>'+
@@ -882,15 +1108,32 @@ function redimensionner(fichier){
 }
 
 /* ==================== Panneau joueurs ==================== */
-function ouvrirJoueurs(){
+/* ==================== Panneau de table (3 onglets) ==================== */
+let ongletTable = "joueurs";
+function ouvrirTable(onglet){
   if(!estMJ()) return;
-  const comptes = base.comptes.slice().sort((a,b)=> (a.role===b.role?0:a.role==="mj"?-1:1) || a.nom.localeCompare(b.nom,"fr"));
+  if(onglet) ongletTable = onglet;
+  const titres = {joueurs:"Comptes et decks", types:"Types de cartes", univers:"Univers"};
+  const corps = ongletTable === "types" ? corpsTypes() : ongletTable === "univers" ? corpsUnivers() : corpsJoueurs();
   $("#voile").innerHTML =
   '<article class="livre etroit"><div class="atelier">'+
-    '<div class="livre-tete"><div><div class="livre-surtitre">Table</div><h2 class="livre-titre">Comptes et decks</h2></div>'+
+    '<div class="livre-tete"><div><div class="livre-surtitre">La table</div><h2 class="livre-titre">'+titres[ongletTable]+"</h2></div>"+
     '<div class="nav-livre"><button class="rond" data-fermer aria-label="Fermer">'+glyphe("croix")+"</button></div></div>"+
-    '<div class="filet"></div>'+
-    '<div>'+comptes.map(u=>{
+    '<div class="onglets">'+
+      '<button data-onglet="joueurs" aria-pressed="'+(ongletTable==="joueurs")+'">Joueurs</button>'+
+      '<button data-onglet="types" aria-pressed="'+(ongletTable==="types")+'">Types</button>'+
+      '<button data-onglet="univers" aria-pressed="'+(ongletTable==="univers")+'">Univers</button>'+
+    "</div>"+
+    '<div class="filet" style="margin-top:6px"></div>'+
+    corps+
+  "</div></article>";
+  ouvrirVoile();
+}
+function ouvrirJoueurs(){ ouvrirTable("joueurs"); }
+
+function corpsJoueurs(){
+  const comptes = base.comptes.slice().sort((a,b)=> (a.role===b.role?0:a.role==="mj"?-1:1) || a.nom.localeCompare(b.nom,"fr"));
+  return '<div>'+comptes.map(u=>{
       const mj = u.role==="mj";
       return '<div class="compte-ligne"><div class="compte-nom">'+html(u.nom)+'<span class="role '+(mj?"p-mj":"p-joueur")+'">'+(mj?"MJ":"Joueur")+"</span></div>"+
         '<span class="compte-info">'+(mj?"accès complet":u.deck.length+" carte"+(u.deck.length>1?"s":""))+(u.code?" · code":"")+"</span>"+
@@ -902,9 +1145,163 @@ function ouvrirJoueurs(){
         "</div></div>";
     }).join("")+"</div>"+
     '<div class="barre-atelier" style="justify-content:flex-start"><button class="btn-sombre" data-compte-editer="nouveau">+ Ajouter un compte</button></div>'+
-    '<p class="note-secu">Les codes servent à éviter qu\'on ouvre le deck du voisin par distraction. Ils ne chiffrent rien : quiconque ouvre le fichier <code>.json</code> voit tout. Pour qu\'un joueur ne dispose vraiment que de ses cartes, utilisez « Exporter son deck » et donnez-lui ce fichier-là.</p>'+
+    '<p class="note-secu">Les codes servent à éviter qu\'on ouvre le deck du voisin par distraction. Ils ne chiffrent rien : quiconque ouvre le fichier <code>.json</code> voit tout. Pour qu\'un joueur ne dispose vraiment que de ses cartes, utilisez « Exporter son deck » et donnez-lui ce fichier-là.</p>';
+}
+
+/* ---------- Onglet Types ---------- */
+function corpsTypes(){
+  const usages = {};
+  base.cartes.forEach(c=>usages[c.type]=(usages[c.type]||0)+1);
+  return '<div>'+base.types.map(t=>{
+    const n = usages[t.id]||0;
+    return '<div class="rangee"><span class="pastille-couleur" style="background:'+html(t.couleur)+'"></span>'+
+      '<span class="nom">'+glyphe(t.embleme,"")+html(t.nom)+"</span>"+
+      '<span class="compte-info">'+(n?n+" carte"+(n>1?"s":""):"aucune carte")+"</span>"+
+      '<div class="compte-actions">'+
+        '<button class="mini-btn" data-type-editer="'+t.id+'">Modifier</button>'+
+        (base.types.length>1 ? '<button class="mini-btn danger" data-type-suppr="'+t.id+'">Supprimer</button>' : "")+
+      "</div></div>";
+  }).join("")+"</div>"+
+  '<div class="barre-atelier" style="justify-content:flex-start"><button class="btn-sombre" data-type-editer="nouveau">+ Nouveau type</button></div>'+
+  '<p class="note-secu">Un type ne peut être supprimé que s\'il ne sert plus. Le renommer ou le recolorer, en revanche, se répercute partout aussitôt.</p>';
+}
+
+let brouillonType = null;
+function ouvrirTypeEditeur(id, retour){
+  if(!estMJ()) return;
+  const neuf = id === "nouveau";
+  const t = neuf ? {id:"", nom:"", couleur:PALETTE[0], embleme:"etoile"} : base.types.find(x=>x.id===id);
+  if(!t) return;
+  brouillonType = Object.assign({retour: retour || "table"}, t);
+  dessinerTypeEditeur(neuf);
+}
+function dessinerTypeEditeur(neuf){
+  const t = brouillonType;
+  $("#voile").innerHTML =
+  '<article class="livre etroit" style="--c:'+html(t.couleur)+';--u:'+html(t.couleur)+'"><div class="atelier">'+
+    '<div class="livre-tete"><div><div class="livre-surtitre">'+(neuf?"Nouveau type de carte":"Modifier le type")+"</div>"+
+    '<h2 class="livre-titre">'+(neuf?"Inventer un type":html(t.nom))+"</h2></div>"+
+    '<div class="nav-livre"><button class="rond" data-fermer aria-label="Fermer">'+glyphe("croix")+"</button></div></div>"+
+    '<div class="filet"></div>'+
+    '<div class="champ"><label for="ty-nom">Nom du type</label><input id="ty-nom" value="'+html(t.nom)+'" placeholder="Faction, Rumeur, Table aléatoire…"></div>'+
+    '<div class="champ"><label>Couleur</label><div class="nuancier" id="ty-couleurs">'+
+      PALETTE.map(c=>'<button data-couleur="'+c+'" style="background:'+c+'" aria-pressed="'+(sansAccent(c)===sansAccent(t.couleur))+'" aria-label="'+c+'"></button>').join("")+
+      '<input type="color" id="ty-perso" value="'+html(t.couleur)+'" title="Couleur libre"></div></div>'+
+    '<div class="champ"><label>Emblème</label><div class="grille-emblemes" id="ty-emblemes">'+
+      EMBLEMES.map(e=>'<button data-embleme="'+e+'" aria-pressed="'+(e===t.embleme)+'">'+glyphe(e)+"</button>").join("")+
+    "</div></div>"+
+    '<div class="champ"><label>Aperçu</label><div class="apercu-carte">'+apercuCarte({type:"__apercu__", titre:t.nom||"Titre de la carte", univers:"", resume:"La courte description apparaîtra ici."}, t.couleur, t.embleme)+"</div></div>"+
+    '<div class="barre-atelier"><button class="btn-fantome" id="ty-retour">Retour</button><button class="btn-sombre" data-type-ok="'+(neuf?"nouveau":t.id)+'">'+(neuf?"Créer le type":"Enregistrer")+"</button></div>"+
   "</div></article>";
   ouvrirVoile();
+  setTimeout(()=>{ const e=document.getElementById("ty-nom"); if(e) e.focus(); },40);
+}
+/** Petite carte de démonstration, indépendante de la base. */
+function apercuCarte(c, couleur, embleme, styleFond){
+  return '<button class="carte'+(styleFond?" habillee":"")+'" style="--c:'+html(couleur)+';--u:'+html(couleur)+(styleFond||"")+'" tabindex="-1">'+
+    '<div class="carte-tete"><h3 class="carte-titre">'+html(c.titre)+"</h3>"+glyphe(embleme,"pip")+"</div>"+
+    '<div class="vignette"><svg class="vide" aria-hidden="true"><use href="#g-'+embleme+'"></use></svg></div>'+
+    '<div class="univers">'+html(c.univers||"Univers")+"</div>"+
+    '<p class="resume">'+html(c.resume)+"</p>"+
+    '<div class="pied"><span class="mini-etq">étiquette</span></div></button>';
+}
+async function enregistrerType(id){
+  const nom = document.getElementById("ty-nom").value.trim();
+  if(!nom){ dire("Donnez un nom à ce type.",true); return; }
+  if(id === "nouveau"){
+    const t = normaliserType({nom, couleur:brouillonType.couleur, embleme:brouillonType.embleme});
+    base.types.push(t);
+    if(brouillonType.retour === "atelier" && brouillon){ brouillon.type = t.id; }
+  } else {
+    const t = base.types.find(x=>x.id===id); if(!t) return;
+    t.nom = nom; t.couleur = brouillonType.couleur; t.embleme = brouillonType.embleme;
+  }
+  await sauvegarder(); rendre();
+  if(brouillonType.retour === "atelier" && brouillon){ dessinerAtelier(base.cartes.some(k=>k.id===brouillon.id)); }
+  else ouvrirTable("types");
+  brouillonType = null;
+}
+
+/* ---------- Onglet Univers ---------- */
+function corpsUnivers(){
+  const noms = universConnus();
+  const usages = {};
+  base.cartes.forEach(c=>{ if(c.univers) usages[c.univers]=(usages[c.univers]||0)+1; });
+  if(!noms.length) return '<p class="note-secu">Aucun univers pour l\'instant. Le champ « Univers » d\'une carte en crée un automatiquement ; vous pourrez l\'habiller ici.</p>';
+  return '<div>'+noms.map(nom=>{
+    const u = univInfo(nom), n = usages[nom]||0;
+    return '<div class="rangee">'+
+      (u.fond ? '<span class="apercu-fond" style="background-image:url(\''+html(u.fond)+'\')"></span>'
+              : '<span class="pastille-couleur" style="background:'+html(u.couleur||"#8A93A8")+'"></span>')+
+      '<span class="nom">'+html(nom)+"</span>"+
+      '<span class="compte-info">'+(n?n+" carte"+(n>1?"s":""):"aucune carte")+(u.fond?" · fond":"")+"</span>"+
+      '<div class="compte-actions"><button class="mini-btn" data-univ-editer="'+encodeURIComponent(nom)+'">Habiller</button>'+
+      '<button class="mini-btn" data-univ-filtrer="'+html(nom)+'">Voir ses cartes</button></div></div>';
+  }).join("")+"</div>"+
+  '<p class="note-secu">La couleur d\'un univers colore le liseré et la ligne d\'univers de ses cartes ; l\'emblème et sa teinte restent ceux du type. Le fond s\'applique à toutes les cartes de l\'univers.</p>';
+}
+
+let brouillonUniv = null;
+function ouvrirUniversEditeur(nom){
+  if(!estMJ()) return;
+  const u = univInfo(nom);
+  brouillonUniv = {nomOrigine:nom, nom:nom, couleur:u.couleur||"", fond:u.fond||"", voile:(u.voile===undefined?55:u.voile)};
+  dessinerUniversEditeur();
+}
+function dessinerUniversEditeur(){
+  const u = brouillonUniv;
+  const c = u.couleur || "#8A93A8";
+  const fondStyle = u.fond ? ";background-image:linear-gradient(rgba(247,240,227,"+(u.voile/100)+"),rgba(230,219,197,"+Math.min(1,u.voile/100+.08)+")),url('"+String(u.fond).replace(/'/g,"%27")+"');background-size:cover;background-position:center" : "";
+  $("#voile").innerHTML =
+  '<article class="livre etroit" style="--c:'+html(c)+';--u:'+html(c)+'"><div class="atelier">'+
+    '<div class="livre-tete"><div><div class="livre-surtitre">Univers</div><h2 class="livre-titre">'+html(u.nomOrigine)+"</h2></div>"+
+    '<div class="nav-livre"><button class="rond" data-fermer aria-label="Fermer">'+glyphe("croix")+"</button></div></div>"+
+    '<div class="filet"></div>'+
+    '<div class="champ"><label for="un-nom">Nom</label><input id="un-nom" value="'+html(u.nom)+'">'+
+      '<span class="aide">Le renommer met à jour toutes ses cartes.</span></div>'+
+    '<div class="champ"><label>Couleur de l\'univers</label><div class="nuancier" id="un-couleurs">'+
+      '<button data-couleur="" aria-pressed="'+(!u.couleur)+'" style="background:repeating-linear-gradient(45deg,#ddd 0 4px,#fff 4px 8px)" title="Aucune : suivre la couleur du type"></button>'+
+      PALETTE.map(p=>'<button data-couleur="'+p+'" style="background:'+p+'" aria-pressed="'+(p===u.couleur)+'" aria-label="'+p+'"></button>').join("")+
+      '<input type="color" id="un-perso" value="'+html(c)+'" title="Couleur libre"></div></div>'+
+    '<div class="champ"><label>Fond de carte</label>'+
+      '<div class="apercu-illus"><div class="boite" style="'+(u.fond?"background-image:url(\'"+html(u.fond)+"\');background-size:cover;background-position:center":"")+'">'+(u.fond?"":glyphe("lieu"))+"</div>"+
+      '<div style="display:grid;gap:6px;flex:1;min-width:0">'+
+        '<button class="mini-btn" id="un-fichier-btn">Choisir une image</button>'+
+        '<input type="file" id="un-fichier" accept="image/*" hidden>'+
+        '<input id="un-url" value="'+html(u.fond && u.fond.indexOf("data:")===0 ? "" : u.fond)+'" placeholder="ou coller une adresse https://…">'+
+        (u.fond?'<button class="mini-btn danger" id="un-fond-retirer">Retirer le fond</button>':"")+
+      "</div></div></div>"+
+    (u.fond?'<div class="champ"><label for="un-voile">Voile — '+u.voile+' % <span style="text-transform:none;letter-spacing:0">(plus le voile est fort, plus le texte est lisible)</span></label>'+
+      '<input type="range" class="curseur" id="un-voile" min="30" max="98" value="'+u.voile+'"></div>':"")+
+    '<div class="champ"><label>Aperçu</label><div class="apercu-carte">'+
+      apercuCarte({titre:"Une carte de cet univers", univers:u.nom, resume:"La courte description apparaîtra ici."}, c, "histoire", fondStyle)+
+    "</div></div>"+
+    '<div class="barre-atelier"><button class="btn-fantome" id="un-retour">Retour</button><button class="btn-sombre" id="un-ok">Enregistrer</button></div>'+
+  "</div></article>";
+  ouvrirVoile();
+}
+function lireUniversEditeur(){
+  const n = document.getElementById("un-nom"), u = document.getElementById("un-url"), v = document.getElementById("un-voile");
+  if(n) brouillonUniv.nom = n.value;
+  if(u && u.value.trim()) brouillonUniv.fond = u.value.trim();
+  if(v) brouillonUniv.voile = Number(v.value);
+}
+async function enregistrerUnivers(){
+  const u = brouillonUniv;
+  const nom = document.getElementById("un-nom").value.trim();
+  if(!nom){ dire("L'univers doit garder un nom.",true); return; }
+  const url = document.getElementById("un-url").value.trim();
+  if(url) u.fond = url;
+  else if(u.fond && u.fond.indexOf("data:") !== 0) u.fond = "";
+  if(nom !== u.nomOrigine){
+    base.cartes.forEach(c=>{ if(c.univers === u.nomOrigine) c.univers = nom; });
+    base.univers = base.univers.filter(x=>x.nom !== u.nomOrigine);
+  }
+  base.univers = base.univers.filter(x=>x.nom !== nom);
+  if(u.couleur || u.fond) base.univers.push(normaliserUnivers({nom, couleur:u.couleur, fond:u.fond, voile:u.voile}));
+  if(etat.univers === u.nomOrigine) etat.univers = nom;
+  brouillonUniv = null;
+  await sauvegarder(); rendre(); ouvrirTable("univers");
 }
 
 function ouvrirCompteEditeur(id){
@@ -977,19 +1374,87 @@ function ouvrirFichier(){
     '<div class="livre-tete"><div><div class="livre-surtitre">Base de données</div><h2 class="livre-titre">'+html(base.titre)+"</h2></div>"+
     '<div class="nav-livre"><button class="rond" data-fermer aria-label="Fermer">'+glyphe("croix")+"</button></div></div>"+
     '<div class="filet"></div>'+
-    '<div class="champ"><label>Source déclarée</label><div class="source-boite">'+html(SOURCE.chemin)+"</div></div>"+
+    '<div class="champ"><label for="f-lien">Adresse de la ludothèque</label>'+
+      '<input id="f-lien" value="'+html(chemin)+'" placeholder="https://…/ludotheque.json ou ludotheque.json">'+
+      '<span class="aide">Collez ici le lien donné par votre MJ. Il est mémorisé sur cet appareil.</span></div>'+
     '<div class="champ"><label>État</label><div class="meta-val">'+html(statut.texte)+
-      (poignee?" · fichier attaché en écriture":"")+"</div></div>"+
+      (poignee?" · fichier local attaché en écriture":"")+(pubPrete()&&!modeScript()?" · dépôt "+html(pub.depot):"")+(modeScript()?" · via Google Apps Script":"")+"</div>"+
+      (derniereErreur?'<span class="aide" style="color:#8E2F2A">'+html(derniereErreur)+"</span>":"")+"</div>"+
     '<div class="barre-atelier" style="justify-content:flex-start">'+
-      '<button class="mini-btn" id="f-recharger">Recharger depuis la source</button>'+
-      (mj && api ? '<button class="mini-btn" id="f-attacher">Attacher le fichier (écriture directe)</button>' : "")+
+      '<button class="mini-btn" id="f-lien-ok">Utiliser cette adresse</button>'+
+      '<button class="mini-btn" id="f-recharger">Recharger</button>'+
       (mj && statut.sale ? '<button class="mini-btn" id="f-enregistrer">Enregistrer maintenant</button>' : "")+
-      (mj ? '<button class="mini-btn" id="f-copie">Télécharger une copie</button>' : "")+
-      (mj ? '<button class="mini-btn" id="f-importer">Charger un autre fichier</button>' : "")+
     "</div>"+
-    '<p class="note-secu">Ouverte depuis un simple double-clic (<code>file://</code>), l\'app ne peut pas lire le fichier voisin : les navigateurs l\'interdisent. Deux solutions — <b>attacher le fichier</b> ci-dessus (Chrome, Edge), ou servir le dossier en local, par exemple avec <code>python3 -m http.server</code> puis ouvrir <code>http://localhost:8000</code>.</p>'+
+    (mj ? '<div class="filet"></div><div class="champ"><label>Côté maître du jeu</label></div>'+
+      '<div class="barre-atelier" style="justify-content:flex-start">'+
+        '<button class="mini-btn" id="f-publication">Hébergement distant…</button>'+
+        (api ? '<button class="mini-btn" id="f-attacher">Attacher un fichier local</button>' : "")+
+        '<button class="mini-btn" id="f-copie">Télécharger une copie</button>'+
+        '<button class="mini-btn" id="f-importer">Charger un autre fichier</button>'+
+      "</div>" : "")+
+    '<p class="note-secu">Ouverte par double-clic (<code>file://</code>), l\'app ne peut pas lire un fichier <b>voisin</b> — les navigateurs l\'interdisent — mais elle peut très bien lire une <b>adresse https</b>, à condition que l\'hébergeur autorise le partage (CORS). GitHub, jsDelivr et la plupart des hébergeurs statiques le font ; Google Drive et Dropbox, non.</p>'+
   "</div></article>";
   ouvrirVoile();
+}
+
+function ouvrirPublication(){
+  if(!estMJ()) return;
+  const joueurs = base.comptes.filter(u=>u.role==="joueur");
+  $("#voile").innerHTML =
+  '<article class="livre etroit"><div class="atelier">'+
+    '<div class="livre-tete"><div><div class="livre-surtitre">Hébergement</div><h2 class="livre-titre">Publier la ludothèque</h2></div>'+
+    '<div class="nav-livre"><button class="rond" data-fermer aria-label="Fermer">'+glyphe("croix")+"</button></div></div>"+
+    '<div class="filet"></div>'+
+    '<p class="aide" style="font-size:14.5px;color:rgba(36,29,46,.65);margin:0">Le fichier est déposé sur un dépôt GitHub. Vos joueurs le lisent par son adresse publique ; vous seul écrivez, avec un jeton qui reste sur cet appareil.</p>'+
+    '<div class="duo">'+
+      '<div class="champ"><label for="p-depot">Dépôt</label><input id="p-depot" value="'+html(pub.depot)+'" placeholder="pseudo/ma-table"></div>'+
+      '<div class="champ"><label for="p-branche">Branche</label><input id="p-branche" value="'+html(pub.branche)+'" placeholder="main"></div>'+
+    "</div>"+
+    '<div class="champ"><label for="p-fichier">Chemin du fichier dans le dépôt</label><input id="p-fichier" value="'+html(pub.fichier)+'" placeholder="ludotheque.json"></div>'+
+    '<div class="champ"><label for="p-jeton">Jeton d\'accès</label><input id="p-jeton" type="password" value="'+html(pub.jeton)+'" placeholder="github_pat_…">'+
+      '<span class="aide">GitHub → Settings → Developer settings → Fine-grained tokens. Un seul dépôt, permission <b>Contents : Read and write</b>. Ce jeton reste dans ce navigateur.</span></div>'+
+    '<div class="champ"><label><input type="checkbox" id="p-decks" '+(pub.decksAuto?"checked":"")+' style="width:auto;margin-right:8px">Publier aussi un fichier par joueur</label>'+
+      '<span class="aide">Chaque joueur reçoit alors un lien qui ne contient que ses cartes — les autres lui restent invisibles.</span></div>'+
+    '<div class="barre-atelier" style="justify-content:flex-start">'+
+      '<button class="btn-sombre" id="p-enregistrer">Enregistrer et publier</button>'+
+      (pubPrete()?'<button class="mini-btn" id="p-decks-maintenant">Republier les decks</button>':"")+
+      (pub.jeton?'<button class="mini-btn danger" id="p-oublier">Oublier le jeton</button>':"")+
+    "</div>"+
+    (pubPrete()?'<div class="filet"></div><div class="champ"><label>Liens à distribuer</label>'+
+      '<div class="source-boite" style="margin-bottom:6px">Table complète (vous) : '+html(urlBrute())+"</div>"+
+      joueurs.map(j=>'<div class="source-boite" style="margin-bottom:6px">'+html(j.nom)+" : "+html(urlBrute(cheminDeck(j)))+"</div>").join("")+
+      '<span class="aide">Vos joueurs ouvrent le HTML, collent leur lien dans « Adresse de la ludothèque », et n\'y reviennent plus.</span></div>':"")+
+    '<p class="note-secu">Un dépôt public est lisible par qui connaît l\'adresse. Rien de secret ne doit s\'y trouver, et un joueur qui ouvre le fichier de la table complète y voit tout, codes compris. C\'est précisément à quoi servent les fichiers par joueur.</p>'+
+  "</div></article>";
+  ouvrirVoile();
+}
+
+async function enregistrerPublication(){
+  pub.depot = document.getElementById("p-depot").value.trim().replace(/^https?:\/\/github\.com\//,"").replace(/\/$/,"");
+  pub.branche = document.getElementById("p-branche").value.trim() || "main";
+  pub.fichier = document.getElementById("p-fichier").value.trim().replace(/^\//,"") || "ludotheque.json";
+  pub.jeton = document.getElementById("p-jeton").value.trim();
+  pub.decksAuto = document.getElementById("p-decks").checked;
+  pub.actif = !!(pub.depot && pub.jeton);
+  enregistrerPub();
+  if(!pub.actif){ dire("Il manque le dépôt ou le jeton.",true); return; }
+  try{
+    await deposerGH(pub.fichier, JSON.stringify(base,null,2), "Ludothèque — publication");
+    let n = 0;
+    if(pub.decksAuto) n = await publierDecks(true);
+    ecrireCache(false); majStatut("ok","publié en ligne");
+    let bascule = false;
+    if(statut.code==="ok" && !localStorage.getItem(CLE_SOURCE)){
+      try{ await fetch(chemin+(chemin.indexOf("?")>=0?"&":"?")+"t="+Date.now(),{cache:"no-store"}); }
+      catch(err){ definirSource(urlBrute()); bascule = true; }
+    }
+    ouvrirPublication();
+    dire("Publié"+(n?" — "+n+" deck(s) mis en ligne":"")+(bascule?". L'app lit désormais cette adresse.":"."));
+  }catch(e){
+    derniereErreur = (e && e.message) || String(e);
+    dire("Publication refusée : "+derniereErreur, true);
+    ouvrirPublication();
+  }
 }
 
 function telecharger(nom,contenu,type){
@@ -1000,7 +1465,7 @@ function telecharger(nom,contenu,type){
   setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 }
 function exporterMd(c){
-  const fm = "---\ntitre: "+c.titre+"\nunivers: "+c.univers+"\ntype: "+typeInfo(c.type).label+"\ntags: ["+c.tags.join(", ")+"]\n---\n\n> "+c.resume+"\n\n"+c.texte+"\n";
+  const fm = "---\ntitre: "+c.titre+"\nunivers: "+c.univers+"\ntype: "+typeInfo(c.type).nom+"\ntags: ["+c.tags.join(", ")+"]\n---\n\n> "+c.resume+"\n\n"+c.texte+"\n";
   telecharger(c.titre.replace(/[\\/:*?"<>|]/g,"-")+".md", fm, "text/markdown");
   dire("Carte exportée en Markdown.");
 }
@@ -1033,29 +1498,50 @@ async function recharger(silencieux){
     verifierSession(); rendre();
     if(!silencieux) dire("Contenu rechargé depuis la source.");
   }catch(e){
-    majStatut("hs","source injoignable");
-    if(!silencieux) dire("Source injoignable : "+SOURCE.chemin+". Voir les explications dans ce panneau.",true);
+    majStatut("hs", attenteConnexion() ? "connexion requise" : "source injoignable");
+    if(!silencieux && !attenteConnexion()) dire("Source injoignable : "+chemin+". Voir les explications dans ce panneau.",true);
   }
 }
 
 /* ==================== Connexion ==================== */
 let choixEnCours = null;
+let nouvelleTable = false;
 function montrerSeuil(){
   $("#app").hidden = true;
   const s = $("#seuil"); s.hidden = false;
   const dos = '<span class="dos" style="transform:rotate(-14deg)"></span><span class="dos" style="transform:rotate(-5deg)"></span><span class="dos" style="transform:rotate(4deg)"></span><span class="dos" style="transform:rotate(13deg)"></span>';
 
+  if(modeScript() && (!idents || !moi())){
+    s.innerHTML = '<div class="seuil-boite"><div class="dos-groupe">'+dos+"</div>"+
+      "<h2>"+html(base.titre && base.cartes.length ? base.titre : "Votre table")+"</h2>"+
+      "<p>Entrez votre nom et votre code. La table ne vous enverra que vos cartes.</p>"+
+      '<div class="seuil-form"><input id="s-nom" placeholder="Votre nom" autocomplete="off" value="'+html(idents?idents.nom:"")+'">'+
+        '<input id="s-code" type="password" placeholder="Code" autocomplete="off">'+
+        '<button class="btn btn-or" id="s-connexion">Entrer</button></div>'+
+      '<p class="seuil-note">Table : <code>'+html(chemin.replace(/^https:\/\//,"").slice(0,52))+'…</code>'+
+      ' &nbsp;·&nbsp; <button class="effacer" id="s-changer-lien">changer d\'adresse</button></p></div>';
+    setTimeout(()=>{ const e=document.getElementById(idents?"s-code":"s-nom"); if(e) e.focus(); },50);
+    return;
+  }
+
   if(!base.comptes.length){
     const api = "showOpenFilePicker" in window;
+    if(statut.code === "hs" && !nouvelleTable){
+      s.innerHTML = '<div class="seuil-boite"><div class="dos-groupe">'+dos+"</div>"+
+        "<h2>Où est votre table ?</h2><p>Collez le lien que votre MJ vous a donné. Il ne sera à saisir qu'une fois.</p>"+
+        '<div class="seuil-form"><input id="s-lien" placeholder="https://…/ludotheque.json" autocomplete="off" style="min-width:300px"><button class="btn btn-or" id="s-lien-ok">Ouvrir</button></div>'+
+        '<p class="seuil-note">'+(api?'<button class="btn" id="s-attacher">Attacher un fichier local</button> ':"")+
+        '<button class="btn" id="s-charger">Charger un fichier</button></p>'+
+        '<p class="seuil-note">Rien n\'a été trouvé à <code>'+html(chemin)+"</code>. &nbsp;·&nbsp; "+
+        '<button class="effacer" id="s-nouvelle-table">démarrer une nouvelle table</button></p></div>';
+      setTimeout(()=>{ const e=document.getElementById("s-lien"); if(e) e.focus(); },50);
+      return;
+    }
     s.innerHTML = '<div class="seuil-boite"><div class="dos-groupe">'+dos+"</div>"+
       "<h2>Première ouverture</h2><p>Créez le compte du maître du jeu. Vous ajouterez les joueurs ensuite.</p>"+
       '<div class="seuil-form"><input id="s-nom" placeholder="Votre nom" autocomplete="off"><input id="s-code" placeholder="Code (facultatif)" autocomplete="off"><button class="btn btn-or" id="s-creer">Ouvrir la table</button></div>'+
-      (statut.code==="hs"
-        ? '<p class="seuil-note">La source <code>'+html(SOURCE.chemin)+"</code> n'a pas pu être lue. Si ce fichier existe déjà, ouvrez-le plutôt que de repartir de zéro.<br><br>"+
-          (api?'<button class="btn" id="s-attacher">Attacher ce fichier</button> ':"")+
-          '<button class="btn" id="s-charger">Charger un fichier</button></p>'
-        : '<p class="seuil-note">Source des données : <code>'+html(SOURCE.chemin)+"</code></p>")+
-      "</div>";
+      '<p class="seuil-note">Source des données : <code>'+html(chemin)+"</code>"+
+      (statut.code==="hs" ? ' &nbsp;·&nbsp; <button class="effacer" id="s-retour-lien">j\'ai un lien</button>' : "")+"</p></div>";
     setTimeout(()=>{ const e=document.getElementById("s-nom"); if(e) e.focus(); },50);
     return;
   }
@@ -1071,7 +1557,8 @@ function montrerSeuil(){
   s.innerHTML = '<div class="seuil-boite"><div class="dos-groupe">'+dos+"</div>"+
     "<h2>Qui prend place ?</h2><p>"+html(base.titre)+"</p>"+
     '<div class="qui">'+cs.map(u=>'<button data-entrer="'+u.id+'"><span class="nom">'+html(u.nom)+'</span><span class="role '+(u.role==="mj"?"mj":"joueur")+'">'+(u.role==="mj"?"MJ":"Joueur")+"</span></button>").join("")+"</div>"+
-    '<p class="seuil-note">Source : <code>'+html(SOURCE.chemin)+"</code> — "+html(statut.texte)+"</p></div>";
+    '<p class="seuil-note">Source : <code>'+html(chemin)+"</code> — "+html(statut.texte)+
+    ' &nbsp; <button class="effacer" id="s-changer-lien">changer d\'adresse</button></p></div>';
 }
 function entrer(id){
   const u = base.comptes.find(x=>x.id===id); if(!u) return;
@@ -1105,8 +1592,32 @@ document.addEventListener("click", async function(ev){
   /* --- seuil --- */
   if(d.entrer){ entrer(d.entrer); return; }
   if(c.id==="s-retour"){ choixEnCours=null; montrerSeuil(); return; }
+  if(c.id==="s-nouvelle-table"){ nouvelleTable = true; montrerSeuil(); return; }
+  if(c.id==="s-retour-lien"){ nouvelleTable = false; montrerSeuil(); return; }
   if(c.id==="s-attacher"){ attacherFichier(); return; }
   if(c.id==="s-charger"){ $("#fichier-import").click(); return; }
+  if(c.id==="s-changer-lien"){
+    const v = prompt("Adresse de la ludothèque :", chemin);
+    if(v===null) return;
+    definirSource(v); poignee = null; sessionId = null; definirIdents(null);
+    base = normaliserBase({});
+    try{ localStorage.removeItem(CLE_SESSION); }catch(e){}
+    majStatut("inconnu","chargement…");
+    await recharger(true);
+    if($("#app").hidden) montrerSeuil();
+    if(statut.code!=="ok" && !attenteConnexion()) dire("Cette adresse n'a pas pu être lue.",true);
+    return;
+  }
+  if(c.id==="s-lien-ok"){
+    const v = document.getElementById("s-lien").value.trim();
+    if(!v){ dire("Collez d'abord un lien.",true); return; }
+    definirSource(v); poignee = null;
+    majStatut("inconnu","chargement…");
+    await recharger(true);
+    if($("#app").hidden) montrerSeuil();
+    if(statut.code!=="ok" && !attenteConnexion()) dire("Cette adresse n'a pas pu être lue. Vérifiez le lien, ou que l'hébergeur autorise le partage (CORS).",true);
+    return;
+  }
   if(c.id==="s-entrer"){
     const u = base.comptes.find(x=>x.id===choixEnCours);
     if(u && document.getElementById("s-code").value.trim() === u.code) ouvrirSession(u.id);
@@ -1122,8 +1633,31 @@ document.addEventListener("click", async function(ev){
     dire("Table ouverte. Le bouton « Joueurs » vous permet d'ajouter vos joueurs.");
     return;
   }
+  if(c.id==="s-connexion"){
+    const nom = document.getElementById("s-nom").value.trim();
+    const code = document.getElementById("s-code").value;
+    if(!nom){ dire("Indiquez votre nom.",true); return; }
+    const avant = idents;
+    definirIdents({nom, code});
+    majStatut("inconnu","connexion…");
+    try{
+      const d = await chargerDistant();
+      base = d;
+      sessionId = d.moi || (d.comptes[0] && d.comptes[0].id);
+      try{ localStorage.setItem(CLE_SESSION, sessionId); }catch(e){}
+      ecrireCache(false); majStatut("ok","connecté à la table");
+      $("#seuil").hidden = true; $("#app").hidden = false;
+      etat.mainTirage = []; etat.deckDe = null; rendre();
+    }catch(e){
+      definirIdents(avant); majStatut("hs","non connecté");
+      montrerSeuil();
+      dire((e && e.message) || "Connexion refusée.", true);
+    }
+    return;
+  }
   if(c.id==="btn-deconnexion"){
     sessionId=null; try{ localStorage.removeItem(CLE_SESSION); }catch(e){}
+    if(modeScript()){ definirIdents(null); base = normaliserBase({}); }
     etat.deckDe=null; document.body.classList.remove("mode-deck");
     montrerSeuil(); return;
   }
@@ -1184,7 +1718,51 @@ document.addEventListener("click", async function(ev){
   if(c.closest(".choix-type") && d.type){ lireAtelier(); brouillon.type=d.type; dessinerAtelier(base.cartes.some(k=>k.id===brouillon.id)); return; }
 
   /* --- comptes --- */
-  if(c.id==="btn-joueurs"){ ouvrirJoueurs(); return; }
+  if(c.id==="btn-joueurs"){ ouvrirTable("joueurs"); return; }
+  if(d.onglet){ ouvrirTable(d.onglet); return; }
+
+  /* --- types --- */
+  if(d.typeEditer){ ouvrirTypeEditeur(d.typeEditer); return; }
+  if(c.id==="ch-type-nouveau"){ lireAtelier(); ouvrirTypeEditeur("nouveau","atelier"); return; }
+  if(c.id==="ty-retour"){
+    const r = brouillonType && brouillonType.retour; brouillonType = null;
+    if(r === "atelier" && brouillon) dessinerAtelier(base.cartes.some(k=>k.id===brouillon.id));
+    else ouvrirTable("types");
+    return;
+  }
+  if(d.typeOk){ enregistrerType(d.typeOk); return; }
+  if(d.typeSuppr){
+    const t = base.types.find(x=>x.id===d.typeSuppr);
+    const n = base.cartes.filter(x=>x.type===t.id).length;
+    if(n){ dire("« "+t.nom+" » sert encore à "+n+" carte"+(n>1?"s":"")+". Changez-les de type d'abord.",true); return; }
+    if(confirm("Supprimer le type « "+t.nom+" » ?")){
+      base.types = base.types.filter(x=>x.id!==t.id);
+      etat.types.delete(t.id);
+      await sauvegarder(); rendre(); ouvrirTable("types");
+    }
+    return;
+  }
+  if(c.closest("#ty-couleurs") && d.couleur !== undefined){
+    brouillonType.couleur = d.couleur; dessinerTypeEditeur(!base.types.some(x=>x.id===brouillonType.id)); return;
+  }
+  if(c.closest("#ty-emblemes") && d.embleme){
+    brouillonType.nom = document.getElementById("ty-nom").value;
+    brouillonType.embleme = d.embleme; dessinerTypeEditeur(!base.types.some(x=>x.id===brouillonType.id)); return;
+  }
+
+  /* --- univers --- */
+  if(d.univEditer){ ouvrirUniversEditeur(decodeURIComponent(d.univEditer)); return; }
+  if(d.univFiltrer){
+    etat.univers = d.univFiltrer; etat.mainTirage=[]; fermerVoile(); rendre();
+    window.scrollTo({top:0,behavior:"smooth"}); return;
+  }
+  if(c.id==="un-retour"){ brouillonUniv = null; ouvrirTable("univers"); return; }
+  if(c.id==="un-ok"){ enregistrerUnivers(); return; }
+  if(c.id==="un-fichier-btn"){ document.getElementById("un-fichier").click(); return; }
+  if(c.id==="un-fond-retirer"){ lireUniversEditeur(); brouillonUniv.fond=""; dessinerUniversEditeur(); return; }
+  if(c.closest("#un-couleurs") && d.couleur !== undefined){
+    lireUniversEditeur(); brouillonUniv.couleur = d.couleur; dessinerUniversEditeur(); return;
+  }
   if(d.composer){ etat.deckDe = d.composer; etat.vue="grille"; majVues(); fermerVoile(); rendre(); window.scrollTo({top:0,behavior:"smooth"}); return; }
   if(c.id==="deck-fini"){ etat.deckDe=null; rendre(); return; }
   if(d.deckVider){
@@ -1210,6 +1788,30 @@ document.addEventListener("click", async function(ev){
 
   /* --- fichier --- */
   if(c.id==="etat-fichier"){ ouvrirFichier(); return; }
+  if(c.id==="f-lien-ok"){
+    const v = document.getElementById("f-lien").value.trim();
+    if(statut.sale && !confirm("Des modifications ne sont pas encore enregistrées. Changer d'adresse va les perdre. Continuer ?")) return;
+    definirSource(v); poignee = null;
+    majStatut("inconnu","chargement…");
+    await recharger(true);
+    if(statut.code!=="ok" && !attenteConnexion()) dire("Cette adresse n'a pas pu être lue. Vérifiez le lien, ou que l'hébergeur autorise le partage (CORS).",true);
+    else dire("Adresse enregistrée sur cet appareil.");
+    fermerVoile();
+    return;
+  }
+  if(c.id==="f-publication"){ ouvrirPublication(); return; }
+  if(c.id==="p-enregistrer"){ enregistrerPublication(); return; }
+  if(c.id==="p-decks-maintenant"){
+    try{ const n = await publierDecks(true); dire(n+" deck(s) republié(s)."); }
+    catch(e){ dire("Échec : "+((e&&e.message)||e), true); }
+    return;
+  }
+  if(c.id==="p-oublier"){
+    if(confirm("Oublier le jeton sur cet appareil ? La lecture continuera de fonctionner, plus l'écriture.")){
+      pub.jeton=""; pub.actif=false; enregistrerPub(); ouvrirPublication(); dire("Jeton effacé.");
+    }
+    return;
+  }
   if(c.id==="f-recharger"){ await recharger(false); if($("#voile").classList.contains("ouvert")) ouvrirFichier(); return; }
   if(c.id==="f-attacher"){ attacherFichier(); return; }
   if(c.id==="f-enregistrer"){
@@ -1218,7 +1820,7 @@ document.addEventListener("click", async function(ev){
     ouvrirFichier(); return;
   }
   if(c.id==="f-copie"){
-    telecharger((SOURCE.chemin.split("/").pop()||"ludotheque.json"), JSON.stringify(base,null,2));
+    telecharger((chemin.split("/").pop()||"ludotheque.json"), JSON.stringify(base,null,2));
     dire("Copie téléchargée. Remplacez le fichier source par celle-ci.");
     return;
   }
@@ -1246,6 +1848,23 @@ document.addEventListener("change", async function(ev){
     }catch(e){ dire("Cette image n'a pas pu être lue. Essayez un JPEG ou un PNG.",true); }
   }
   if(ev.target.id==="filtre-univers"){ etat.univers=ev.target.value; etat.mainTirage=[]; rendre(); }
+  if(ev.target.id==="ty-perso" && brouillonType){
+    brouillonType.nom = document.getElementById("ty-nom").value;
+    brouillonType.couleur = ev.target.value;
+    dessinerTypeEditeur(!base.types.some(x=>x.id===brouillonType.id));
+  }
+  if(ev.target.id==="un-perso" && brouillonUniv){
+    lireUniversEditeur(); brouillonUniv.couleur = ev.target.value; dessinerUniversEditeur();
+  }
+  if(ev.target.id==="un-fichier" && brouillonUniv){
+    const f = ev.target.files[0]; if(!f) return;
+    try{
+      lireUniversEditeur();
+      brouillonUniv.fond = await redimensionner(f);
+      dessinerUniversEditeur();
+      dire("Fond ajouté (redimensionné pour ne pas alourdir le fichier).");
+    }catch(e){ dire("Cette image n'a pas pu être lue.",true); }
+  }
   if(ev.target.id==="fichier-import"){
     const f = ev.target.files[0]; if(!f) return;
     const fr = new FileReader();
@@ -1267,9 +1886,14 @@ document.addEventListener("change", async function(ev){
 
 document.addEventListener("keydown", function(ev){
   const dansChamp = ev.target.matches("input,textarea,select");
+  if(ev.key==="Enter" && ev.target.id==="s-lien"){
+    ev.preventDefault();
+    const b = document.getElementById("s-lien-ok"); if(b) b.click();
+    return;
+  }
   if(ev.key==="Enter" && (ev.target.id==="s-code" || ev.target.id==="s-nom")){
     ev.preventDefault();
-    const b = document.getElementById("s-entrer") || document.getElementById("s-creer");
+    const b = document.getElementById("s-connexion") || document.getElementById("s-entrer") || document.getElementById("s-creer");
     if(b) b.click();
     return;
   }
@@ -1282,6 +1906,19 @@ document.addEventListener("keydown", function(ev){
     const l = filtrees(), i = l.findIndex(c=>c.id===etat.ouverte);
     const v = ev.key==="ArrowLeft" ? l[i-1] : l[i+1];
     if(v) ouvrirLivre(v.id);
+  }
+});
+
+document.addEventListener("input", function(ev){
+  if(ev.target.id==="un-voile" && brouillonUniv){
+    brouillonUniv.voile = Number(ev.target.value);
+    const ap = document.querySelector(".apercu-carte .carte");
+    const et = document.querySelector('label[for="un-voile"]');
+    if(et) et.innerHTML = 'Voile — '+brouillonUniv.voile+' % <span style="text-transform:none;letter-spacing:0">(plus le voile est fort, plus le texte est lisible)</span>';
+    if(ap && brouillonUniv.fond){
+      const v = brouillonUniv.voile/100;
+      ap.style.backgroundImage = "linear-gradient(rgba(247,240,227,"+v+"),rgba(230,219,197,"+Math.min(1,v+.08)+")),url('"+String(brouillonUniv.fond).replace(/'/g,"%27")+"')";
+    }
   }
 });
 
@@ -1310,7 +1947,7 @@ window.addEventListener("beforeunload", function(e){
   }
 
   const cache = lireCache();
-  const cacheValide = cache && cache.chemin === SOURCE.chemin;
+  const cacheValide = cache && cache.chemin === chemin;
   let distant = null, echec = null;
   try{ distant = await chargerDistant(); }catch(e){ echec = e; }
 
@@ -1331,8 +1968,8 @@ window.addEventListener("beforeunload", function(e){
   verifierSession();
   if(!$("#app").hidden) rendre();
 
-  if(echec && !cacheValide){
-    dire("Le fichier « "+SOURCE.chemin+" » n'a pas pu être lu. Ouvrez le panneau de source pour l'attacher ou servir le dossier en local.", true);
+  if(echec && !cacheValide && !attenteConnexion()){
+    dire("Aucune ludothèque trouvée à « "+chemin+" ». Collez le lien de votre table ci-dessus.", true);
   }
 
   if(SOURCE.rechargerToutesLesMinutes > 0){
