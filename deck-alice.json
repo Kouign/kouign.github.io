@@ -3,17 +3,17 @@
   "titre": "Ludothèque de la table — deck de Alice",
   "cartes": [
     {
-      "id": "c06",
-      "titre": "Dame Orvane",
+      "id": "c02",
+      "titre": "La Nuit des Douze Cloches",
       "univers": "Les Cendres d'Arkhen",
-      "type": "personnage",
-      "resume": "Courtière en services. Elle ne vend rien, elle prête — et elle n'oublie aucun terme.",
-      "texte": "## En une phrase\nUne femme d'une soixantaine d'années, gantée, qui vous écoute jusqu'au bout et vous propose exactement ce dont vous aviez honte d'avoir besoin.\n\n## Voix\n- Parle lentement, ne coupe jamais.\n- Dit « nous » quand elle parle de vos problèmes.\n- N'écrit rien. Elle retient.\n\n## Ce qu'elle veut\nÊtre créancière de tout le monde. L'argent l'ennuie ; les obligations, non.\n\n## À la table\nProposez toujours un marché **acceptable**. La menace n'est jamais dans les termes, elle est dans la date. Notez ouvertement les dettes des PJ sur une fiche visible : c'est l'horloge du personnage.\n\n## Liens\n- Détient une créance sur un des sonneurs de [[La Nuit des Douze Cloches]].\n- Cherche [[Le Cœur de Verre]] non pour le pouvoir, mais pour savoir *qui* parle dedans.",
+      "type": "histoire",
+      "resume": "Une séance d'enquête urbaine. Douze cloches, onze sonneurs, et l'aube comme minuterie.",
+      "texte": "## Pitch\nLa cité sonne les douze cloches du solstice. Si l'une reste muette avant l'aube, la trêve qui protège le quartier bas s'achève. Un sonneur manque à l'appel.\n\n## Structure\n| Acte | Durée | Ce qui bascule |\n|---|---|---|\n| Découverte | 40 min | Le sonneur est introuvable, sa corde est coupée net |\n| Chasse | 60 min | Trois pistes concurrentes, une seule tient avant l'aube |\n| Sonnerie | 30 min | Quelqu'un doit monter — et redescendre |\n\n## Les trois pistes\n- **La guilde** couvre un vol et gagne du temps.\n- **La famille** du sonneur savait, et a choisi de se taire.\n- **La chose dans le beffroi** n'a pas coupé la corde : elle l'a mangée. Voir [[Le chœur des mangeurs de son]].\n\n## Horloge\nMarquez huit crans. Chaque scène ratée en coche un. À zéro, l'aube tombe et la trêve avec.\n\n---\n*Système conseillé : [[Marge & Cascade]] — la mécanique de marge sert à doser combien de temps chaque piste coûte.*",
       "tags": [
-        "PNJ",
-        "intrigue",
-        "dette",
-        "récurrent"
+        "enquête",
+        "une séance",
+        "ville",
+        "tension"
       ],
       "illustration": "",
       "modifie": 1788215947179
@@ -38,7 +38,7 @@
       "code": "",
       "deck": [
         "cmthtpsuh0fl1y",
-        "c06"
+        "c02"
       ]
     }
   ]
