@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "titre": "Ludothèque de la table — deck de Alice",
+  "cartes": [],
+  "comptes": [
+    {
+      "id": "umthtrycwu4awz",
+      "nom": "Alice",
+      "role": "joueur",
+      "code": "",
+      "deck": []
+    }
+  ]
+}
