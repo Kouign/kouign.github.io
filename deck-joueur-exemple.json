@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "titre": "Ludothèque de la table — deck de Joueur exemple",
+  "cartes": [
+    {
+      "id": "c05",
+      "titre": "Vasque, la cité renversée",
+      "univers": "Les Cendres d'Arkhen",
+      "type": "lieu",
+      "resume": "Bâtie dans le cratère, toits vers le fond. Plus on est riche, plus on est bas.",
+      "texte": "## Le principe\nVasque occupe un cratère. La ville pousse vers le bas : les puissants habitent le fond, à l'abri du vent et des regards, les autres s'accrochent aux parois. « Monter » est une insulte.\n\n## Trois étages, trois logiques\n1. **La Lèvre** — arrivées, marchés, milice. Tout se sait en une heure.\n2. **Les Parois** — verriers, cordiers, échelles louées à la journée. C'est là que vit [[Le Cœur de Verre]] dans les histoires qu'on raconte.\n3. **Le Fond** — jardins clos, silence acheté. On n'y entre pas, on y est invité.\n\n## Ce qui fait jouer\n- Le déplacement coûte : chaque descente demande un droit de passage.\n- Les cordes sont une infrastructure politique. Les couper est un acte de guerre.\n- L'eau tombe toujours vers le Fond. Y compris ce qu'on y jette.\n\n## Entrées de scénario\n- [[La Nuit des Douze Cloches]] se joue entièrement sur la Lèvre.\n- Une négociation avec [[Dame Orvane]] impose de descendre — donc de devoir un service à trois personnes différentes.",
+      "tags": [
+        "ville",
+        "exploration",
+        "verticalité",
+        "société"
+      ],
+      "illustration": "",
+      "modifie": 1788215947179
+    },
+    {
+      "id": "c07",
+      "titre": "Ce que dit le Registre",
+      "univers": "Les Cendres d'Arkhen",
+      "type": "savoir",
+      "resume": "Un fragment de lore à distribuer aux joueurs : trois versions du même événement.",
+      "texte": "## Usage\nÀ lire ou remettre aux joueurs. Les trois versions se contredisent sur un point. Ne dites pas lequel.\n\n### Version officielle\nLe cratère est né d'un impact. La cité s'y est installée deux siècles plus tard, par prudence et par commodité.\n\n### Version des cordiers\nLe cratère est un trou creusé par quelque chose qui voulait sortir, et qui a échoué. Les cordes ne servent pas à descendre : elles servent à retenir.\n\n### Version consignée au Registre\n« La onzième nuit, le sol a cédé sous le chœur. Aucun corps n'a été retrouvé. Aucun son n'a été entendu. »\n\n---\n**Pour le MJ :** la troisième version est vraie mais incomplète. Voir [[Le chœur des mangeurs de son]].",
+      "tags": [
+        "lore",
+        "document",
+        "handout",
+        "à distribuer"
+      ],
+      "illustration": "",
+      "modifie": 1788215947179
+    }
+  ],
+  "comptes": [
+    {
+      "id": "u-j1",
+      "nom": "Joueur exemple",
+      "role": "joueur",
+      "code": "",
+      "deck": [
+        "c05",
+        "c07"
+      ]
+    }
+  ]
+}
