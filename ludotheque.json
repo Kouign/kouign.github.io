@@ -201,7 +201,9 @@
       "nom": "Alice",
       "role": "joueur",
       "code": "",
-      "deck": []
+      "deck": [
+        "cmthtpsuh0fl1y"
+      ]
     }
   ]
 }
