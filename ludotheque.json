@@ -60,6 +60,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "objet",
       "resume": "Un reliquaire qui bat encore. Celui qui le porte entend les regrets des autres.",
+      "texte": "## Ce que c'est\nUn cœur soufflé dans du verre noir, tiède au toucher, qui bat une fois toutes les douze secondes. Il a été taillé par les verriers de [[Vasque, la cité renversée]] pour contenir la voix d'un mort.\n\n## À la table\n- **Porté à même la peau** : le porteur entend, une fois par scène, la pensée que le PNJ le plus proche s'efforce de taire.\n- **Prix** : chaque écoute laisse un regret étranger. Au bout de trois, le joueur note un souvenir qui n'est pas le sien et doit le jouer.\n- **Le briser** libère la voix. Elle cherche alors un nouveau contenant — et le plus proche est vivant.\n\n> « On ne casse pas un cœur de verre. On le repose, très lentement. »\n\n## Accroches\n1. [[Dame Orvane]] l'a fait voler et l'échangera contre un service que personne ne veut rendre.\n2. Une seconde relique existe, et les deux battent ensemble à moins de cent pas.\n3. Le regret qu'il contient concerne un PJ.",
       "tags": [
         "artefact",
         "malédiction",
@@ -67,7 +68,7 @@
         "fil rouge"
       ],
       "illustration": "",
-      "texte": "## Ce que c'est\nUn cœur soufflé dans du verre noir, tiède au toucher, qui bat une fois toutes les douze secondes. Il a été taillé par les verriers de [[Vasque, la cité renversée]] pour contenir la voix d'un mort.\n\n## À la table\n- **Porté à même la peau** : le porteur entend, une fois par scène, la pensée que le PNJ le plus proche s'efforce de taire.\n- **Prix** : chaque écoute laisse un regret étranger. Au bout de trois, le joueur note un souvenir qui n'est pas le sien et doit le jouer.\n- **Le briser** libère la voix. Elle cherche alors un nouveau contenant — et le plus proche est vivant.\n\n> « On ne casse pas un cœur de verre. On le repose, très lentement. »\n\n## Accroches\n1. [[Dame Orvane]] l'a fait voler et l'échangera contre un service que personne ne veut rendre.\n2. Une seconde relique existe, et les deux battent ensemble à moins de cent pas.\n3. Le regret qu'il contient concerne un PJ."
+      "modifie": 1788215947179
     },
     {
       "id": "c02",
@@ -75,6 +76,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "histoire",
       "resume": "Une séance d'enquête urbaine. Douze cloches, onze sonneurs, et l'aube comme minuterie.",
+      "texte": "## Pitch\nLa cité sonne les douze cloches du solstice. Si l'une reste muette avant l'aube, la trêve qui protège le quartier bas s'achève. Un sonneur manque à l'appel.\n\n## Structure\n| Acte | Durée | Ce qui bascule |\n|---|---|---|\n| Découverte | 40 min | Le sonneur est introuvable, sa corde est coupée net |\n| Chasse | 60 min | Trois pistes concurrentes, une seule tient avant l'aube |\n| Sonnerie | 30 min | Quelqu'un doit monter — et redescendre |\n\n## Les trois pistes\n- **La guilde** couvre un vol et gagne du temps.\n- **La famille** du sonneur savait, et a choisi de se taire.\n- **La chose dans le beffroi** n'a pas coupé la corde : elle l'a mangée. Voir [[Le chœur des mangeurs de son]].\n\n## Horloge\nMarquez huit crans. Chaque scène ratée en coche un. À zéro, l'aube tombe et la trêve avec.\n\n---\n*Système conseillé : [[Marge & Cascade]] — la mécanique de marge sert à doser combien de temps chaque piste coûte.*",
       "tags": [
         "enquête",
         "une séance",
@@ -82,7 +84,7 @@
         "tension"
       ],
       "illustration": "",
-      "texte": "## Pitch\nLa cité sonne les douze cloches du solstice. Si l'une reste muette avant l'aube, la trêve qui protège le quartier bas s'achève. Un sonneur manque à l'appel.\n\n## Structure\n| Acte | Durée | Ce qui bascule |\n|---|---|---|\n| Découverte | 40 min | Le sonneur est introuvable, sa corde est coupée net |\n| Chasse | 60 min | Trois pistes concurrentes, une seule tient avant l'aube |\n| Sonnerie | 30 min | Quelqu'un doit monter — et redescendre |\n\n## Les trois pistes\n- **La guilde** couvre un vol et gagne du temps.\n- **La famille** du sonneur savait, et a choisi de se taire.\n- **La chose dans le beffroi** n'a pas coupé la corde : elle l'a mangée. Voir [[Le chœur des mangeurs de son]].\n\n## Horloge\nMarquez huit crans. Chaque scène ratée en coche un. À zéro, l'aube tombe et la trêve avec.\n\n---\n*Système conseillé : [[Marge & Cascade]] — la mécanique de marge sert à doser combien de temps chaque piste coûte.*"
+      "modifie": 1788215947179
     },
     {
       "id": "c03",
@@ -90,6 +92,7 @@
       "univers": "Règles maison",
       "type": "systeme",
       "resume": "Résolution en d100 sous seuil. C'est l'écart au seuil, pas la réussite, qui raconte la scène.",
+      "texte": "## Le jet\nLancez 1d100 sous un seuil (compétence + attribut). La **marge** est l'écart entre le seuil et le résultat.\n\n| Marge | Résultat |\n|---|---|\n| Échec de 30+ | Cascade : la situation empire d'un cran |\n| Échec | Vous obtenez ce que vous vouliez, ou rien de plus — au choix du MJ |\n| Réussite | L'action passe |\n| Marge 30+ | Réussite et vous gagnez une prise sur la scène |\n| Dizaines doublées | Le monde vous répond directement |\n\n## Cascade\nUne cascade n'annule jamais l'action : elle en déplace le coût. Le personnage ouvre la porte **et** casse la serrure. Toujours *et*, jamais *mais tu échoues*.\n\n## Prises\nUne prise se dépense pour poser un détail vrai dans la fiction. Trois prises non dépensées à la fin d'une séance deviennent un point d'expérience.\n\n## Note de conception\nLe seuil bouge peu ; ce sont les circonstances qui bougent. Résistez à l'envie d'ajouter des modificateurs : préférez une position (fragile / franche / dominante) qui change la conséquence, pas la probabilité.",
       "tags": [
         "d100",
         "résolution",
@@ -97,7 +100,7 @@
         "light"
       ],
       "illustration": "",
-      "texte": "## Le jet\nLancez 1d100 sous un seuil (compétence + attribut). La **marge** est l'écart entre le seuil et le résultat.\n\n| Marge | Résultat |\n|---|---|\n| Échec de 30+ | Cascade : la situation empire d'un cran |\n| Échec | Vous obtenez ce que vous vouliez, ou rien de plus — au choix du MJ |\n| Réussite | L'action passe |\n| Marge 30+ | Réussite et vous gagnez une prise sur la scène |\n| Dizaines doublées | Le monde vous répond directement |\n\n## Cascade\nUne cascade n'annule jamais l'action : elle en déplace le coût. Le personnage ouvre la porte **et** casse la serrure. Toujours *et*, jamais *mais tu échoues*.\n\n## Prises\nUne prise se dépense pour poser un détail vrai dans la fiction. Trois prises non dépensées à la fin d'une séance deviennent un point d'expérience.\n\n## Note de conception\nLe seuil bouge peu ; ce sont les circonstances qui bougent. Résistez à l'envie d'ajouter des modificateurs : préférez une position (fragile / franche / dominante) qui change la conséquence, pas la probabilité."
+      "modifie": 1788215947179
     },
     {
       "id": "c04",
@@ -105,6 +108,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "creature",
       "resume": "Ils ne chassent pas la chair. Ils avalent les bruits, et ce qui les produisait avec.",
+      "texte": "## Portrait\nOn les voit rarement. On remarque d'abord une absence : un pas qui ne claque plus, une cloche qui ne porte pas. Ils vivent dans les caisses de résonance — beffrois, conduits, cages d'escalier.\n\n## À la table\n- **Approche** : le MJ retire un son de la description. Puis un autre. Les joueurs devraient le remarquer avant le troisième.\n- **Attaque** : la victime perd sa voix, puis son nom, puis sa place dans la mémoire des autres.\n- **Faiblesse** : un son qu'ils ne peuvent pas avaler — un son que personne n'a jamais entendu. Instrument neuf, langue morte, cri d'un enfant qui n'est pas né ici.\n\n## Profil ([[Marge & Cascade]])\n- Seuil d'esquive 70, résistance 40\n- Une cascade contre eux coûte un mot : le joueur choisit un mot que son personnage ne pourra plus prononcer de la séance.\n\n> Ne demandez pas de jet de perception. Décrivez simplement moins.",
       "tags": [
         "horreur",
         "bestiaire",
@@ -112,7 +116,7 @@
         "silence"
       ],
       "illustration": "",
-      "texte": "## Portrait\nOn les voit rarement. On remarque d'abord une absence : un pas qui ne claque plus, une cloche qui ne porte pas. Ils vivent dans les caisses de résonance — beffrois, conduits, cages d'escalier.\n\n## À la table\n- **Approche** : le MJ retire un son de la description. Puis un autre. Les joueurs devraient le remarquer avant le troisième.\n- **Attaque** : la victime perd sa voix, puis son nom, puis sa place dans la mémoire des autres.\n- **Faiblesse** : un son qu'ils ne peuvent pas avaler — un son que personne n'a jamais entendu. Instrument neuf, langue morte, cri d'un enfant qui n'est pas né ici.\n\n## Profil ([[Marge & Cascade]])\n- Seuil d'esquive 70, résistance 40\n- Une cascade contre eux coûte un mot : le joueur choisit un mot que son personnage ne pourra plus prononcer de la séance.\n\n> Ne demandez pas de jet de perception. Décrivez simplement moins."
+      "modifie": 1788215947179
     },
     {
       "id": "c05",
@@ -120,6 +124,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "lieu",
       "resume": "Bâtie dans le cratère, toits vers le fond. Plus on est riche, plus on est bas.",
+      "texte": "## Le principe\nVasque occupe un cratère. La ville pousse vers le bas : les puissants habitent le fond, à l'abri du vent et des regards, les autres s'accrochent aux parois. « Monter » est une insulte.\n\n## Trois étages, trois logiques\n1. **La Lèvre** — arrivées, marchés, milice. Tout se sait en une heure.\n2. **Les Parois** — verriers, cordiers, échelles louées à la journée. C'est là que vit [[Le Cœur de Verre]] dans les histoires qu'on raconte.\n3. **Le Fond** — jardins clos, silence acheté. On n'y entre pas, on y est invité.\n\n## Ce qui fait jouer\n- Le déplacement coûte : chaque descente demande un droit de passage.\n- Les cordes sont une infrastructure politique. Les couper est un acte de guerre.\n- L'eau tombe toujours vers le Fond. Y compris ce qu'on y jette.\n\n## Entrées de scénario\n- [[La Nuit des Douze Cloches]] se joue entièrement sur la Lèvre.\n- Une négociation avec [[Dame Orvane]] impose de descendre — donc de devoir un service à trois personnes différentes.",
       "tags": [
         "ville",
         "exploration",
@@ -127,7 +132,7 @@
         "société"
       ],
       "illustration": "",
-      "texte": "## Le principe\nVasque occupe un cratère. La ville pousse vers le bas : les puissants habitent le fond, à l'abri du vent et des regards, les autres s'accrochent aux parois. « Monter » est une insulte.\n\n## Trois étages, trois logiques\n1. **La Lèvre** — arrivées, marchés, milice. Tout se sait en une heure.\n2. **Les Parois** — verriers, cordiers, échelles louées à la journée. C'est là que vit [[Le Cœur de Verre]] dans les histoires qu'on raconte.\n3. **Le Fond** — jardins clos, silence acheté. On n'y entre pas, on y est invité.\n\n## Ce qui fait jouer\n- Le déplacement coûte : chaque descente demande un droit de passage.\n- Les cordes sont une infrastructure politique. Les couper est un acte de guerre.\n- L'eau tombe toujours vers le Fond. Y compris ce qu'on y jette.\n\n## Entrées de scénario\n- [[La Nuit des Douze Cloches]] se joue entièrement sur la Lèvre.\n- Une négociation avec [[Dame Orvane]] impose de descendre — donc de devoir un service à trois personnes différentes."
+      "modifie": 1788215947179
     },
     {
       "id": "c06",
@@ -135,6 +140,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "personnage",
       "resume": "Courtière en services. Elle ne vend rien, elle prête — et elle n'oublie aucun terme.",
+      "texte": "## En une phrase\nUne femme d'une soixantaine d'années, gantée, qui vous écoute jusqu'au bout et vous propose exactement ce dont vous aviez honte d'avoir besoin.\n\n## Voix\n- Parle lentement, ne coupe jamais.\n- Dit « nous » quand elle parle de vos problèmes.\n- N'écrit rien. Elle retient.\n\n## Ce qu'elle veut\nÊtre créancière de tout le monde. L'argent l'ennuie ; les obligations, non.\n\n## À la table\nProposez toujours un marché **acceptable**. La menace n'est jamais dans les termes, elle est dans la date. Notez ouvertement les dettes des PJ sur une fiche visible : c'est l'horloge du personnage.\n\n## Liens\n- Détient une créance sur un des sonneurs de [[La Nuit des Douze Cloches]].\n- Cherche [[Le Cœur de Verre]] non pour le pouvoir, mais pour savoir *qui* parle dedans.",
       "tags": [
         "PNJ",
         "intrigue",
@@ -142,7 +148,7 @@
         "récurrent"
       ],
       "illustration": "",
-      "texte": "## En une phrase\nUne femme d'une soixantaine d'années, gantée, qui vous écoute jusqu'au bout et vous propose exactement ce dont vous aviez honte d'avoir besoin.\n\n## Voix\n- Parle lentement, ne coupe jamais.\n- Dit « nous » quand elle parle de vos problèmes.\n- N'écrit rien. Elle retient.\n\n## Ce qu'elle veut\nÊtre créancière de tout le monde. L'argent l'ennuie ; les obligations, non.\n\n## À la table\nProposez toujours un marché **acceptable**. La menace n'est jamais dans les termes, elle est dans la date. Notez ouvertement les dettes des PJ sur une fiche visible : c'est l'horloge du personnage.\n\n## Liens\n- Détient une créance sur un des sonneurs de [[La Nuit des Douze Cloches]].\n- Cherche [[Le Cœur de Verre]] non pour le pouvoir, mais pour savoir *qui* parle dedans."
+      "modifie": 1788215947179
     },
     {
       "id": "c07",
@@ -150,6 +156,7 @@
       "univers": "Les Cendres d'Arkhen",
       "type": "savoir",
       "resume": "Un fragment de lore à distribuer aux joueurs : trois versions du même événement.",
+      "texte": "## Usage\nÀ lire ou remettre aux joueurs. Les trois versions se contredisent sur un point. Ne dites pas lequel.\n\n### Version officielle\nLe cratère est né d'un impact. La cité s'y est installée deux siècles plus tard, par prudence et par commodité.\n\n### Version des cordiers\nLe cratère est un trou creusé par quelque chose qui voulait sortir, et qui a échoué. Les cordes ne servent pas à descendre : elles servent à retenir.\n\n### Version consignée au Registre\n« La onzième nuit, le sol a cédé sous le chœur. Aucun corps n'a été retrouvé. Aucun son n'a été entendu. »\n\n---\n**Pour le MJ :** la troisième version est vraie mais incomplète. Voir [[Le chœur des mangeurs de son]].",
       "tags": [
         "lore",
         "document",
@@ -157,7 +164,7 @@
         "à distribuer"
       ],
       "illustration": "",
-      "texte": "## Usage\nÀ lire ou remettre aux joueurs. Les trois versions se contredisent sur un point. Ne dites pas lequel.\n\n### Version officielle\nLe cratère est né d'un impact. La cité s'y est installée deux siècles plus tard, par prudence et par commodité.\n\n### Version des cordiers\nLe cratère est un trou creusé par quelque chose qui voulait sortir, et qui a échoué. Les cordes ne servent pas à descendre : elles servent à retenir.\n\n### Version consignée au Registre\n« La onzième nuit, le sol a cédé sous le chœur. Aucun corps n'a été retrouvé. Aucun son n'a été entendu. »\n\n---\n**Pour le MJ :** la troisième version est vraie mais incomplète. Voir [[Le chœur des mangeurs de son]]."
+      "modifie": 1788215947179
     }
   ],
   "comptes": [
